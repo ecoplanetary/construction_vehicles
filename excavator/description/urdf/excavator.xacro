@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="excavator">
+  <xacro:macro name="excavator" params="prefix:=''">
+    <link name="${prefix}Base">
+      <visual>
+        <origin xyz="0.0 0.0 0.793384" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Base.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.068918 0.0 1.38521" rpy="0 0 0" />
+        <geometry>
+          <box size="2.85584 4.44524 0.684194" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}Track_Left_Joint" type="fixed">
+      <origin xyz="-0.02904 -1.709747 0.764672" rpy="0 0 0" />
+      <parent link="${prefix}Base" />
+      <child link="${prefix}Track_Left" />
+    </joint>
+    <link name="${prefix}Track_Left">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Track.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="6.6022 0.757722 1.57115" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}Track_Right_Joint" type="fixed">
+      <origin xyz="-0.02904 1.709747 0.764672" rpy="0 0 0" />
+      <parent link="${prefix}Base" />
+      <child link="${prefix}Track_Right" />
+    </joint>
+    <link name="${prefix}Track_Right">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Track.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="6.6022 0.757722 1.57115" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}Motor_Left_Joint" type="continuous">
+      <origin xyz="2.56148 -1.8052 0.707696" rpy="${pi/2} 0 0" />
+      <parent link="${prefix}Base" />
+      <child link="${prefix}Motor_Left" />
+      <axis xyz="0 0 1" />
+    </joint>
+    <link name="${prefix}Motor_Left">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Motor.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <cylinder radius="0.522574" length="0.531622" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}Motor_Right_Joint" type="continuous">
+      <origin xyz="2.56148 1.8052 0.707696" rpy="${-pi/2} 0 0" />
+      <parent link="${prefix}Base" />
+      <child link="${prefix}Motor_Right" />
+      <axis xyz="0 0 1" />
+    </joint>
+    <link name="${prefix}Motor_Right">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Motor.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <cylinder radius="0.522574" length="0.531622" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="Cat_395_Cabin_Joint" type="revolute">
+      <origin xyz="0.15232 0.0 0.793384" rpy="0 0 0" />
+      <parent link="Cat_395_Base" />
+      <child link="Cat_395_Cabin" />
+      <axis xyz="0 0 1" />
+      <limit effort="1000.0" lower="${-pi}" upper="${pi}" velocity="1000.0" />
+    </joint>
+    <link name="${prefix}Cabin">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Cabin_No_Wires.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="1.24333 0.0 1.98011" rpy="0 0 0" />
+        <geometry>
+          <box size="6.92858 4.5 2.0914" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}Door_Joint" type="revolute">
+      <origin xyz="-0.9692 -1.757323 2.610876" rpy="0 0 0" />
+      <parent link="${prefix}Cabin" />
+      <child link="${prefix}Door" />
+      <axis xyz="0 0 1" />
+      <limit effort="1000.0" lower="0.0" upper="${pi}" velocity="1000.0" />
+    </joint>
+    <link name="${prefix}Door">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Door.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/collision/Door.stl" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}Boom_Joint" type="continuous">
+      <origin xyz="-0.340 0.0 2.047" rpy="0 0 0" />
+      <parent link="${prefix}Cabin" />
+      <child link="${prefix}Boom" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}Boom">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Boom_No_Wires.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/collision/Boom_No_Wires.stl" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}Boom_Cylinder_Left_1_Joint" type="continuous">
+      <origin xyz="-1.269 -0.506 1.167" rpy="0 ${-34/180 * pi} 0" />
+      <parent link="${prefix}Cabin" />
+      <child link="${prefix}Boom_Cylinder_Left_1" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}Boom_Cylinder_Left_1">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Boom_Cylinder_Left_1.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 1.09389" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="0.271748" length="2.46036" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}Boom_Cylinder_Left_2_Joint" type="prismatic">
+      <origin xyz="0.0 0.0 4.13344" rpy="0 0 0" />
+      <parent link="${prefix}Boom_Cylinder_Left_1" />
+      <child link="${prefix}Boom_Cylinder_Left_2" />
+      <axis xyz="0 0 1" />
+      <limit lower="-1.70" upper="0.31" effort="1000.0" velocity="1000.0" />
+    </joint>
+    <link name="${prefix}Boom_Cylinder_Left_2">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Boom_Cylinder_Left_2.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 -1.11271" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="0.120975" length="2.46738" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}Boom_Cylinder_Right_1_Joint" type="continuous">
+      <origin xyz="-1.269 0.506 1.167" rpy="0 ${-34/180 * pi} 0" />
+      <parent link="${prefix}Cabin" />
+      <child link="${prefix}Boom_Cylinder_Right_1" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}Boom_Cylinder_Right_1">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Boom_Cylinder_Right_1.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 1.09389" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="0.271748" length="2.46036" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}Boom_Cylinder_Right_2_Joint" type="prismatic">
+      <origin xyz="0.0 0.0 4.13344" rpy="0 0 0" />
+      <parent link="${prefix}Boom_Cylinder_Right_1" />
+      <child link="${prefix}Boom_Cylinder_Right_2" />
+      <axis xyz="0 0 1" />
+      <limit lower="-1.70" upper="0.31" effort="1000.0" velocity="1000.0" />
+    </joint>
+    <link name="${prefix}Boom_Cylinder_Right_2">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Boom_Cylinder_Right_2.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 -1.11271" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="0.120975" length="2.46738" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}Arm_Cylinder_1_Joint" type="continuous">
+      <origin xyz="-2.605 0.000 3.306" rpy="0 ${-81/180 * pi} 0" />
+      <parent link="${prefix}Boom" />
+      <child link="${prefix}Arm_Cylinder_1" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}Arm_Cylinder_1">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Arm_Cylinder_1.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 1.4316" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="0.262538" length="3.1358" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}Arm_Cylinder_2_Joint" type="prismatic">
+      <origin xyz="0.0 0.0 4.76576" rpy="0 0 0" />
+      <parent link="${prefix}Arm_Cylinder_1" />
+      <child link="${prefix}Arm_Cylinder_2" />
+      <axis xyz="0 0 1" />
+      <limit lower="-1.6" upper="0.38" effort="1000.0" velocity="1000.0" />
+    </joint>
+    <link name="${prefix}Arm_Cylinder_2">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Arm_Cylinder_2.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 -1.09116" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="0.120975" length="2.42278" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}Arm_Joint" type="continuous">
+      <origin xyz="-7.002 0.000 2.732" rpy="0 0 0" />
+      <parent link="${prefix}Boom" />
+      <child link="${prefix}Arm" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}Arm">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Arm.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/collision/Arm.stl" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}Bucket_Cylinder_1_Joint" type="continuous">
+      <origin xyz="-0.972 0.000 1.190" rpy="0 ${8.97/180 * pi} 0" />
+      <parent link="${prefix}Arm" />
+      <child link="${prefix}Bucket_Cylinder_1" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}Bucket_Cylinder_1">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Bucket_Cylinder_1.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 -1.11" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="0.173211" length="2.49252" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}Bucket_Cylinder_2_Joint" type="prismatic">
+      <origin xyz="0.0 0.0 -3.1066" rpy="0 0 0" />
+      <parent link="${prefix}Bucket_Cylinder_1" />
+      <child link="${prefix}Bucket_Cylinder_2" />
+      <axis xyz="0 0 1" />
+      <limit lower="-0.41" upper="0.57" effort="1000.0" velocity="1000.0" />
+    </joint>
+    <link name="${prefix}Bucket_Cylinder_2">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Bucket_Cylinder_2.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 0.583215" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="0.120975" length="1.408384" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}Part_11_Joint" type="continuous">
+      <origin xyz="-0.599 -0.350 -2.289" rpy="0 0 0" />
+      <parent link="${prefix}Arm" />
+      <child link="${prefix}Part_11" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}Part_11">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Part_11.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/collision/Part_11.stl" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}Bucket_Joint" type="continuous">
+      <origin xyz="-0.659 0.000 -2.843" rpy="0 0 0" />
+      <parent link="${prefix}Arm" />
+      <child link="${prefix}Bucket" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}Bucket">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Bucket.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/collision/Bucket.stl" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}Part_12_Joint" type="continuous">
+      <origin xyz="-0.719 0.000 0.036" rpy="0 0.069 0" />
+      <parent link="${prefix}Bucket" />
+      <child link="${prefix}Part_12" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}Part_12">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Part_12.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/collision/Part_12.stl" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+  </xacro:macro>
+</robot>

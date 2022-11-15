@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="excavator">
+
+  <xacro:include filename="$(find construction_vehicles)/excavator/description/urdf/excavator.xacro" />
+
+  <xacro:excavator prefix="Cat_395_" />
+
+</robot>

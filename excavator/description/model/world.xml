@@ -1,0 +1,23 @@
+<mujoco>
+  <option timestep="0.001" integrator="RK4" gravity="0 0 0">
+    <flag sensornoise="disable" energy="enable" contact="disable" />
+  </option>
+
+  <asset>
+    <texture name="grid" type="2d" builtin="checker" width="512" height="512" rgb1=".1 .2 .3" rgb2=".2 .3 .4" />
+    <material name="grid" texture="grid" texrepeat="1 1" texuniform="true" reflectance=".2" />
+  </asset>
+
+  <worldbody>
+    <geom name="floor" size="0 0 .05" type="plane" material="grid" condim="3" />
+    <light diffuse=".5 .5 .5" pos="0 0 5" dir="0 0 -1" />
+  </worldbody>
+
+  <equality>
+    <connect name="Passive_Boom_Cylinder_Left_Joint" body1="Cat_395_Boom" body2="Cat_395_Boom_Cylinder_Left_2" anchor="-3.240 -0.506 2.546" />
+    <connect name="Passive_Boom_Cylinder_Right_Joint" body1="Cat_395_Boom" body2="Cat_395_Boom_Cylinder_Right_2" anchor="-3.240 0.506 2.546" />
+    <connect name="Passive_Arm_Cylinder_Joint" body1="Cat_395_Arm" body2="Cat_395_Arm_Cylinder_2" anchor="-0.310 0.000 1.320" />
+    <connect name="Passive_Part_11_Joint" body1="Cat_395_Bucket_Cylinder_2" body2="Cat_395_Part_11" anchor="0.0 0.0 0.0" />
+    <connect name="Passive_Part_12_Joint" body1="Cat_395_Bucket_Cylinder_2" body2="Cat_395_Part_12" anchor="0.0 0.0 0.0" />
+  </equality>
+</mujoco>
