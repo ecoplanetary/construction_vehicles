@@ -68,8 +68,8 @@
     </link>
 
     <joint name="${prefix}P04_Joint" type="fixed">
-      <origin xyz="0.120276 0.0 2.31127" rpy="0 0 0" />
-      <parent link="${prefix}P01" />
+      <origin xyz="0.83742 0.0 0.97936" rpy="0 0 0" />
+      <parent link="${prefix}P02" />
       <child link="${prefix}P04" />
     </joint>
     <link name="${prefix}P04">

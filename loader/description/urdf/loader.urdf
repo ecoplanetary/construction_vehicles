@@ -68,8 +68,8 @@
     </inertial>
   </link>
   <joint name="Cat_982XE_P04_Joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.120276 0.0 2.31127"/>
-    <parent link="Cat_982XE_P01"/>
+    <origin rpy="0 0 0" xyz="0.83742 0.0 0.97936"/>
+    <parent link="Cat_982XE_P02"/>
     <child link="Cat_982XE_P04"/>
   </joint>
   <link name="Cat_982XE_P04">
