@@ -1,0 +1,3 @@
+add_odom_joints: true
+
+root_frame_id: map

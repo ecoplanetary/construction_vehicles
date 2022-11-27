@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="loader">
+  <xacro:macro name="loader" params="prefix:=''">
+    <link name="${prefix}P01">
+      <visual>
+        <origin xyz="-1.9413 0.0 0.751704" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/visual/P01.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="-1.9413 0.0 0.751704" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/collision/P01.stl" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}P02_Joint" type="revolute">
+      <origin xyz="-0.717144 0.0 1.33191" rpy="0 0 0" />
+      <parent link="${prefix}P01" />
+      <child link="${prefix}P02" />
+      <axis xyz="0 0 1" />
+      <limit effort="1000.0" lower="${-pi/4}" upper="${pi/4}" velocity="1000.0" />
+    </joint>
+    <link name="${prefix}P02">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/visual/P02.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/collision/P02.stl" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}P03_Joint" type="continuous">
+      <origin xyz="0.83742 0.0 0.97936" rpy="0 0 0" />
+      <parent link="${prefix}P02" />
+      <child link="${prefix}P03" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}P03">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/visual/P03.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/collision/P03.stl" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}P04_Joint" type="fixed">
+      <origin xyz="0.120276 0.0 2.31127" rpy="0 0 0" />
+      <parent link="${prefix}P01" />
+      <child link="${prefix}P04" />
+    </joint>
+    <link name="${prefix}P04">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/visual/P04.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/collision/P04.stl" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}P05_Joint" type="continuous">
+      <origin xyz="1.264 0.0 1.0108" rpy="0 ${-1.9*pi/180} 0" />
+      <parent link="${prefix}P02" />
+      <child link="${prefix}P05" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}P05">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/visual/P05.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.554138 0.265697 0.0" rpy="0 ${90*pi/180} 0" />
+        <geometry>
+          <cylinder radius="0.130486" length="1.262766" />
+        </geometry>
+      </collision>
+      <collision>
+        <origin xyz="0.554138 -0.265697 0.0" rpy="0 ${90*pi/180} 0" />
+        <geometry>
+          <cylinder radius="0.130486" length="1.262766" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}P06_Joint" type="prismatic">
+      <origin xyz="0.88164 0.0 0.0" rpy="0 0 0" />
+      <parent link="${prefix}P05" />
+      <child link="${prefix}P06" />
+      <axis xyz="1 0 0" />
+      <limit effort="1000.0" lower="-0.5" upper="0.04" velocity="1000.0" />
+    </joint>
+    <link name="${prefix}P06">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/visual/P06.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.550058 0.265697 0.0" rpy="0 ${90*pi/180} 0" />
+        <geometry>
+          <cylinder radius="0.121951" length="1.137294" />
+        </geometry>
+      </collision>
+      <collision>
+        <origin xyz="0.550058 -0.265697 0.0" rpy="0 ${90*pi/180} 0" />
+        <geometry>
+          <cylinder radius="0.121951" length="1.137294" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}P07_Joint" type="continuous">
+      <origin xyz="0.39609 0.0 -0.47872" rpy="0 ${-42.2*pi/180} 0" />
+      <parent link="${prefix}P02" />
+      <child link="${prefix}P07" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}P07">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/visual/P07.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.426266 0.489167 0.0" rpy="0 ${90*pi/180} 0" />
+        <geometry>
+          <cylinder radius="0.121951" length="0.968702" />
+        </geometry>
+      </collision>
+      <collision>
+        <origin xyz="0.426266 -0.489167 0.0" rpy="0 ${90*pi/180} 0" />
+        <geometry>
+          <cylinder radius="0.078821" length="0.968702" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}P08_Joint" type="prismatic">
+      <origin xyz="1.4591 0.0 0.0" rpy="0 0 0" />
+      <parent link="${prefix}P07" />
+      <child link="${prefix}P08" />
+      <axis xyz="1 0 0" />
+      <limit effort="1000.0" lower="-0.43" upper="0.43" velocity="1000.0" />
+    </joint>
+    <link name="${prefix}P08">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/visual/P08.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="-0.245586 0.487527 0.0" rpy="0 ${90*pi/180} 0" />
+        <geometry>
+          <cylinder radius="0.043654" length="0.645934" />
+        </geometry>
+      </collision>
+      <collision>
+        <origin xyz="-0.245586 -0.487527 0.0" rpy="0 ${90*pi/180} 0" />
+        <geometry>
+          <cylinder radius="0.043654" length="0.645934" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}P09_Joint" type="fixed">
+      <origin xyz="1.5113 0.0 -0.66341" rpy="0 0 0" />
+      <parent link="${prefix}P03" />
+      <child link="${prefix}P09" />
+    </joint>
+    <link name="${prefix}P09">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/visual/P09.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/collision/P09.stl" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}P010_Joint" type="continuous">
+      <origin xyz="0.66399 0.0 0.00449" rpy="0 0 0" />
+      <parent link="${prefix}P09" />
+      <child link="${prefix}P10" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}P10">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/visual/P10.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/collision/P10.stl" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}P011_Joint" type="continuous">
+      <origin xyz="-0.15078 0.0 -0.77188" rpy="0 0 0" />
+      <parent link="${prefix}P10" />
+      <child link="${prefix}P11" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}P11">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/visual/P11.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/collision/P11.stl" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}P012_Joint" type="continuous">
+      <origin xyz="2.9386 0.0 -1.8232" rpy="0 0 0" />
+      <parent link="${prefix}P03" />
+      <child link="${prefix}P12" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}P12">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/visual/P12.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/collision/P12.stl" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}P013_Joint" type="continuous">
+      <origin xyz="-0.700314 0.68091 2.83828" rpy="0 0 0" />
+      <parent link="${prefix}P01" />
+      <child link="${prefix}P13" />
+      <axis xyz="0 0 1" />
+    </joint>
+    <link name="${prefix}P13">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/visual/P13.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/collision/P13.stl" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}P014_Joint" type="fixed">
+      <origin xyz="-2.58025 0.0 0.941297" rpy="0 0 0" />
+      <parent link="${prefix}P01" />
+      <child link="${prefix}P14" />
+    </joint>
+    <link name="${prefix}P14">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/visual/P14.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="${90*pi/180} 0 0" />
+        <geometry>
+          <cylinder radius="0.150405" length="1.858738" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}P015_Joint" type="continuous">
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+      <parent link="${prefix}P14" />
+      <child link="${prefix}P15" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}P15">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/visual/P15.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.0 1.34357 0.0" rpy="${90*pi/180} 0 0" />
+        <geometry>
+          <cylinder radius="0.934162" length="0.817806" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}P016_Joint" type="continuous">
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+      <parent link="${prefix}P14" />
+      <child link="${prefix}P16" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}P16">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/visual/P16.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.0 -1.34357 0.0" rpy="${90*pi/180} 0 0" />
+        <geometry>
+          <cylinder radius="0.934162" length="0.817806" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}P018_Joint" type="continuous">
+      <origin xyz="1.8549 0.0 -0.39222" rpy="0 0 0" />
+      <parent link="${prefix}P02" />
+      <child link="${prefix}P18" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}P18">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/visual/P15.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.0 1.34357 0.0" rpy="${90*pi/180} 0 0" />
+        <geometry>
+          <cylinder radius="0.934162" length="0.817806" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}P019_Joint" type="continuous">
+      <origin xyz="1.8549 0.0 -0.39222" rpy="0 0 0" />
+      <parent link="${prefix}P02" />
+      <child link="${prefix}P19" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}P19">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/loader/description/meshes/visual/P16.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.0 -1.34357 0.0" rpy="${90*pi/180} 0 0" />
+        <geometry>
+          <cylinder radius="0.934162" length="0.817806" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1000.0" />
+        <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0" />
+      </inertial>
+    </link>
+
+  </xacro:macro>
+</robot>

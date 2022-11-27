@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="loader">
+
+  <xacro:include filename="$(find construction_vehicles)/loader/description/urdf/loader.xacro" />
+
+  <xacro:loader prefix="Cat_982XE_" />
+
+</robot>
