@@ -338,7 +338,7 @@
     </inertial>
   </link>
   <joint name="Cat_982XE_P015_Joint" type="continuous">
-    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    <origin rpy="0 0 0" xyz="0.0 1.4457 0.0"/>
     <parent link="Cat_982XE_P14"/>
     <child link="Cat_982XE_P15"/>
     <axis xyz="0 1 0"/>
@@ -350,7 +350,7 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="1.5707963267948966 0 0" xyz="0.0 1.34357 0.0"/>
+      <origin rpy="1.5707963267948966 0 0" xyz="0.0 -0.10213 0.0"/>
       <geometry>
         <cylinder length="0.817806" radius="0.934162"/>
       </geometry>
@@ -361,7 +361,7 @@
     </inertial>
   </link>
   <joint name="Cat_982XE_P016_Joint" type="continuous">
-    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    <origin rpy="0 0 0" xyz="0.0 -1.4457 0.0"/>
     <parent link="Cat_982XE_P14"/>
     <child link="Cat_982XE_P16"/>
     <axis xyz="0 1 0"/>
@@ -373,7 +373,7 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="1.5707963267948966 0 0" xyz="0.0 -1.34357 0.0"/>
+      <origin rpy="1.5707963267948966 0 0" xyz="0.0 0.10213 0.0"/>
       <geometry>
         <cylinder length="0.817806" radius="0.934162"/>
       </geometry>
@@ -384,7 +384,7 @@
     </inertial>
   </link>
   <joint name="Cat_982XE_P018_Joint" type="continuous">
-    <origin rpy="0 0 0" xyz="1.8549 0.0 -0.39222"/>
+    <origin rpy="0 0 0" xyz="1.8549 1.4457 -0.39222"/>
     <parent link="Cat_982XE_P02"/>
     <child link="Cat_982XE_P18"/>
     <axis xyz="0 1 0"/>
@@ -396,7 +396,7 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="1.5707963267948966 0 0" xyz="0.0 1.34357 0.0"/>
+      <origin rpy="1.5707963267948966 0 0" xyz="0.0 -0.10213 0.0"/>
       <geometry>
         <cylinder length="0.817806" radius="0.934162"/>
       </geometry>
@@ -407,7 +407,7 @@
     </inertial>
   </link>
   <joint name="Cat_982XE_P019_Joint" type="continuous">
-    <origin rpy="0 0 0" xyz="1.8549 0.0 -0.39222"/>
+    <origin rpy="0 0 0" xyz="1.8549 -1.4457 -0.39222"/>
     <parent link="Cat_982XE_P02"/>
     <child link="Cat_982XE_P19"/>
     <axis xyz="0 1 0"/>
@@ -419,7 +419,7 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="1.5707963267948966 0 0" xyz="0.0 -1.34357 0.0"/>
+      <origin rpy="1.5707963267948966 0 0" xyz="0.0 0.10213 0.0"/>
       <geometry>
         <cylinder length="0.817806" radius="0.934162"/>
       </geometry>

@@ -349,7 +349,7 @@
     </link>
 
     <joint name="${prefix}P015_Joint" type="continuous">
-      <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+      <origin xyz="0.0 1.4457 0.0" rpy="0 0 0" />
       <parent link="${prefix}P14" />
       <child link="${prefix}P15" />
       <axis xyz="0 1 0" />
@@ -361,7 +361,7 @@
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0.0 1.34357 0.0" rpy="${90*pi/180} 0 0" />
+        <origin xyz="0.0 -0.10213 0.0" rpy="${90*pi/180} 0 0" />
         <geometry>
           <cylinder radius="0.934162" length="0.817806" />
         </geometry>
@@ -373,7 +373,7 @@
     </link>
 
     <joint name="${prefix}P016_Joint" type="continuous">
-      <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+      <origin xyz="0.0 -1.4457 0.0" rpy="0 0 0" />
       <parent link="${prefix}P14" />
       <child link="${prefix}P16" />
       <axis xyz="0 1 0" />
@@ -385,7 +385,7 @@
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0.0 -1.34357 0.0" rpy="${90*pi/180} 0 0" />
+        <origin xyz="0.0 0.10213 0.0" rpy="${90*pi/180} 0 0" />
         <geometry>
           <cylinder radius="0.934162" length="0.817806" />
         </geometry>
@@ -397,7 +397,7 @@
     </link>
 
     <joint name="${prefix}P018_Joint" type="continuous">
-      <origin xyz="1.8549 0.0 -0.39222" rpy="0 0 0" />
+      <origin xyz="1.8549 1.4457 -0.39222" rpy="0 0 0" />
       <parent link="${prefix}P02" />
       <child link="${prefix}P18" />
       <axis xyz="0 1 0" />
@@ -409,7 +409,7 @@
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0.0 1.34357 0.0" rpy="${90*pi/180} 0 0" />
+        <origin xyz="0.0 -0.10213 0.0" rpy="${90*pi/180} 0 0" />
         <geometry>
           <cylinder radius="0.934162" length="0.817806" />
         </geometry>
@@ -421,7 +421,7 @@
     </link>
 
     <joint name="${prefix}P019_Joint" type="continuous">
-      <origin xyz="1.8549 0.0 -0.39222" rpy="0 0 0" />
+      <origin xyz="1.8549 -1.4457 -0.39222" rpy="0 0 0" />
       <parent link="${prefix}P02" />
       <child link="${prefix}P19" />
       <axis xyz="0 1 0" />
@@ -433,7 +433,7 @@
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0.0 -1.34357 0.0" rpy="${90*pi/180} 0 0" />
+        <origin xyz="0.0 0.10213 0.0" rpy="${90*pi/180} 0 0" />
         <geometry>
           <cylinder radius="0.934162" length="0.817806" />
         </geometry>
