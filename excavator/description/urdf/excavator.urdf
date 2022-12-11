@@ -8,7 +8,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.0 0.0 0.793384"/>
       <geometry>
-        <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Base.dae"/>
+        <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Base_Without_Wheels.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -87,13 +87,14 @@
     </inertial>
   </link>
   <joint name="Cat_395_Motor_Right_Joint" type="continuous">
-    <origin rpy="-1.5707963267948966 0 0" xyz="2.56148 1.8052 0.707696"/>
+    <origin rpy="1.5707963267948966 0 0" xyz="2.56148 1.8052 0.707696"/>
     <parent link="Cat_395_Base"/>
     <child link="Cat_395_Motor_Right"/>
     <axis xyz="0 0 1"/>
   </joint>
   <link name="Cat_395_Motor_Right">
     <visual>
+      <origin rpy="3.141592653589793 0 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Motor.dae"/>
       </geometry>
@@ -101,6 +102,50 @@
     <collision>
       <geometry>
         <cylinder length="0.531622" radius="0.522574"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1000.0"/>
+      <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0"/>
+    </inertial>
+  </link>
+  <joint name="Cat_395_Wheel_Left_Joint" type="continuous">
+    <origin rpy="1.5707963267948966 0 0" xyz="-2.65099 -1.70966 0.707697"/>
+    <parent link="Cat_395_Base"/>
+    <child link="Cat_395_Wheel_Left"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="Cat_395_Wheel_Left">
+    <visual>
+      <geometry>
+        <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Wheel.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.177212" radius="0.46"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1000.0"/>
+      <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0"/>
+    </inertial>
+  </link>
+  <joint name="Cat_395_Wheel_Right_Joint" type="continuous">
+    <origin rpy="1.5707963267948966 0 0" xyz="-2.65099 1.70966 0.707697"/>
+    <parent link="Cat_395_Base"/>
+    <child link="Cat_395_Wheel_Right"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="Cat_395_Wheel_Right">
+    <visual>
+      <geometry>
+        <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Wheel.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.177212" radius="0.46"/>
       </geometry>
     </collision>
     <inertial>
@@ -177,67 +222,33 @@
       <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0"/>
     </inertial>
   </link>
-  <joint name="Cat_395_Boom_Cylinder_Left_1_Joint" type="continuous">
-    <origin rpy="0 -0.593411945678072 0" xyz="-1.269 -0.506 1.167"/>
+  <joint name="Cat_395_Boom_Cylinder_1_Joint" type="continuous">
+    <origin rpy="0 -0.593411945678072 0" xyz="-1.269 0.0 1.167"/>
     <parent link="Cat_395_Cabin"/>
-    <child link="Cat_395_Boom_Cylinder_Left_1"/>
+    <child link="Cat_395_Boom_Cylinder_1"/>
     <axis xyz="0 1 0"/>
   </joint>
-  <link name="Cat_395_Boom_Cylinder_Left_1">
+  <link name="Cat_395_Boom_Cylinder_1">
     <visual>
+      <origin rpy="0 0 0" xyz="0.0 -0.506 0.0"/>
       <geometry>
         <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Boom_Cylinder_Left_1.dae"/>
       </geometry>
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0.0 0.0 1.09389"/>
-      <geometry>
-        <cylinder length="2.46036" radius="0.271748"/>
-      </geometry>
-    </collision>
-    <inertial>
-      <mass value="1000.0"/>
-      <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0"/>
-    </inertial>
-  </link>
-  <joint name="Cat_395_Boom_Cylinder_Left_2_Joint" type="prismatic">
-    <origin rpy="0 0 0" xyz="0.0 0.0 4.13344"/>
-    <parent link="Cat_395_Boom_Cylinder_Left_1"/>
-    <child link="Cat_395_Boom_Cylinder_Left_2"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="1000.0" lower="-1.70" upper="0.31" velocity="1000.0"/>
-  </joint>
-  <link name="Cat_395_Boom_Cylinder_Left_2">
     <visual>
-      <geometry>
-        <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Boom_Cylinder_Left_2.dae"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0.0 0.0 -1.11271"/>
-      <geometry>
-        <cylinder length="2.46738" radius="0.120975"/>
-      </geometry>
-    </collision>
-    <inertial>
-      <mass value="1000.0"/>
-      <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0"/>
-    </inertial>
-  </link>
-  <joint name="Cat_395_Boom_Cylinder_Right_1_Joint" type="continuous">
-    <origin rpy="0 -0.593411945678072 0" xyz="-1.269 0.506 1.167"/>
-    <parent link="Cat_395_Cabin"/>
-    <child link="Cat_395_Boom_Cylinder_Right_1"/>
-    <axis xyz="0 1 0"/>
-  </joint>
-  <link name="Cat_395_Boom_Cylinder_Right_1">
-    <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.506 0.0"/>
       <geometry>
         <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Boom_Cylinder_Right_1.dae"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.0 0.0 1.09389"/>
+      <origin rpy="0 0 0" xyz="0.0 -0.506 1.09389"/>
+      <geometry>
+        <cylinder length="2.46036" radius="0.271748"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 0.506 1.09389"/>
       <geometry>
         <cylinder length="2.46036" radius="0.271748"/>
       </geometry>
@@ -247,21 +258,34 @@
       <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0"/>
     </inertial>
   </link>
-  <joint name="Cat_395_Boom_Cylinder_Right_2_Joint" type="prismatic">
+  <joint name="Cat_395_Boom_Cylinder_2_Joint" type="prismatic">
     <origin rpy="0 0 0" xyz="0.0 0.0 4.13344"/>
-    <parent link="Cat_395_Boom_Cylinder_Right_1"/>
-    <child link="Cat_395_Boom_Cylinder_Right_2"/>
+    <parent link="Cat_395_Boom_Cylinder_1"/>
+    <child link="Cat_395_Boom_Cylinder_2"/>
     <axis xyz="0 0 1"/>
     <limit effort="1000.0" lower="-1.70" upper="0.31" velocity="1000.0"/>
   </joint>
-  <link name="Cat_395_Boom_Cylinder_Right_2">
+  <link name="Cat_395_Boom_Cylinder_2">
     <visual>
+      <origin rpy="0 0 0" xyz="0.0 -0.506 0.0"/>
+      <geometry>
+        <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Boom_Cylinder_Left_2.dae"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.506 0.0"/>
       <geometry>
         <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Boom_Cylinder_Right_2.dae"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.0 0.0 -1.11271"/>
+      <origin rpy="0 0 0" xyz="0.0 -0.506 -1.11271"/>
+      <geometry>
+        <cylinder length="2.46738" radius="0.120975"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 0.506 -1.11271"/>
       <geometry>
         <cylinder length="2.46738" radius="0.120975"/>
       </geometry>
@@ -341,7 +365,7 @@
     </inertial>
   </link>
   <joint name="Cat_395_Bucket_Cylinder_1_Joint" type="continuous">
-    <origin rpy="0 0.15655603390389136 0" xyz="-0.972 0.000 1.190"/>
+    <origin rpy="0 0.15655603390389136 0" xyz="-0.999 0.000 1.120"/>
     <parent link="Cat_395_Arm"/>
     <child link="Cat_395_Bucket_Cylinder_1"/>
     <axis xyz="0 1 0"/>
@@ -432,7 +456,7 @@
     </inertial>
   </link>
   <joint name="Cat_395_Part_12_Joint" type="continuous">
-    <origin rpy="0 0.069 0" xyz="-0.719 0.000 0.036"/>
+    <origin rpy="0 0 0" xyz="-0.719 0.000 0.036"/>
     <parent link="Cat_395_Bucket"/>
     <child link="Cat_395_Part_12"/>
     <axis xyz="0 1 0"/>
