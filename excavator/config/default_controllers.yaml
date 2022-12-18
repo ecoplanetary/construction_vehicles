@@ -2,6 +2,38 @@ joint_state_controller:
   type: joint_state_controller/JointStateController
   publish_rate: 60
 
+joint_group_position_controller:
+  type: position_controllers/JointGroupPositionController
+  joints: 
+    - Cat_395_Boom_Joint
+    - Cat_395_Boom_Cylinder_1_Joint
+    - Cat_395_Arm_Joint
+    - Cat_395_Arm_Cylinder_1_Joint
+    - Cat_395_Bucket_Joint
+    - Cat_395_Bucket_Cylinder_1_Joint
+    - Cat_395_Part_11_Joint
+    - Cat_395_Part_12_Joint
+
+Cat_395_Door_Joint_controller:
+  type: position_controllers/JointPositionController
+  joint: Cat_395_Door_Joint
+
+Cat_395_Cabin_Joint_controller:
+  type: position_controllers/JointPositionController
+  joint: Cat_395_Cabin_Joint
+
+Cat_395_Boom_Cylinder_2_Joint_controller:
+  type: position_controllers/JointPositionController
+  joint: Cat_395_Boom_Cylinder_2_Joint
+
+Cat_395_Arm_Cylinder_2_Joint_controller:
+  type: position_controllers/JointPositionController
+  joint: Cat_395_Arm_Cylinder_2_Joint
+
+Cat_395_Bucket_Cylinder_2_Joint_controller:
+  type: position_controllers/JointPositionController
+  joint: Cat_395_Bucket_Cylinder_2_Joint
+
 joint_trajectory_controller:
   type: effort_controllers/JointTrajectoryController
   joints:

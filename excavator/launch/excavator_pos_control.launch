@@ -1,0 +1,14 @@
+<launch>
+
+  <!-- Load controller manager -->
+  <rosparam command="load" file="$(find construction_vehicles)/excavator/config/default_controllers.yaml" />
+  <node name="excavator_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="spawn 
+		joint_state_controller 
+		joint_group_position_controller
+    Cat_395_Door_Joint_controller
+    Cat_395_Cabin_Joint_controller
+    Cat_395_Boom_Cylinder_2_Joint_controller
+    Cat_395_Arm_Cylinder_2_Joint_controller
+    Cat_395_Bucket_Cylinder_2_Joint_controller" />
+
+</launch>
