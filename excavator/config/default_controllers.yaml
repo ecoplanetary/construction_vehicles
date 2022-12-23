@@ -18,20 +18,36 @@ Cat_395_Door_Joint_controller:
   type: position_controllers/JointPositionController
   joint: Cat_395_Door_Joint
 
-Cat_395_Cabin_Joint_controller:
+Cat_395_Cabin_Joint_pos_controller:
   type: position_controllers/JointPositionController
   joint: Cat_395_Cabin_Joint
 
-Cat_395_Boom_Cylinder_2_Joint_controller:
+Cat_395_Boom_Cylinder_2_Joint_pos_controller:
   type: position_controllers/JointPositionController
   joint: Cat_395_Boom_Cylinder_2_Joint
 
-Cat_395_Arm_Cylinder_2_Joint_controller:
+Cat_395_Arm_Cylinder_2_Joint_pos_controller:
   type: position_controllers/JointPositionController
   joint: Cat_395_Arm_Cylinder_2_Joint
 
-Cat_395_Bucket_Cylinder_2_Joint_controller:
+Cat_395_Bucket_Cylinder_2_Joint_pos_controller:
   type: position_controllers/JointPositionController
+  joint: Cat_395_Bucket_Cylinder_2_Joint
+
+Cat_395_Cabin_Joint_vel_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: Cat_395_Cabin_Joint
+
+Cat_395_Boom_Cylinder_2_Joint_vel_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: Cat_395_Boom_Cylinder_2_Joint
+
+Cat_395_Arm_Cylinder_2_Joint_vel_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: Cat_395_Arm_Cylinder_2_Joint
+
+Cat_395_Bucket_Cylinder_2_Joint_vel_controller:
+  type: velocity_controllers/JointVelocityController
   joint: Cat_395_Bucket_Cylinder_2_Joint
 
 joint_trajectory_controller:

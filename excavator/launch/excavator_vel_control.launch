@@ -6,9 +6,9 @@
 		joint_state_controller 
 		joint_group_position_controller
     Cat_395_Door_Joint_controller
-    Cat_395_Cabin_Joint_pos_controller
-    Cat_395_Boom_Cylinder_2_Joint_pos_controller
-    Cat_395_Arm_Cylinder_2_Joint_pos_controller
-    Cat_395_Bucket_Cylinder_2_Joint_pos_controller" />
+    Cat_395_Cabin_Joint_vel_controller
+    Cat_395_Boom_Cylinder_2_Joint_vel_controller
+    Cat_395_Arm_Cylinder_2_Joint_vel_controller
+    Cat_395_Bucket_Cylinder_2_Joint_vel_controller" />
 
 </launch>
