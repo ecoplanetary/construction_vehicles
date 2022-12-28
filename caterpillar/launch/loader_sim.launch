@@ -1,0 +1,14 @@
+<launch>
+
+  <arg name="namespace" default="loader" />
+
+  <group ns="$(arg namespace)">
+    <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
+      <arg name="config" value="$(find construction_vehicles)/loader/config/loader.yaml" />
+      <arg name="robot" value="$(find construction_vehicles)/loader/description/urdf/loader.urdf" />
+      <arg name="world" value="$(find construction_vehicles)/loader/description/model/world.xml" />
+      <arg name="use_urdf" value="true" />
+    </include>
+  </group>
+
+</launch>

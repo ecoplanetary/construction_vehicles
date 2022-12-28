@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="caterpillar">
+  <xacro:macro name="caterpillar" params="prefix:=''">
+    <link name="${prefix}Main">
+      <visual>
+        <origin xyz="5.98719 0.0 3.1686" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/Main.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}FrontLeftSwivel_Joint" type="revolute">
+      <origin xyz="3.56191 1.61062 1.84622" rpy="0 0 0" />
+      <parent link="${prefix}Main" />
+      <child link="${prefix}FrontLeftSwivel" />
+      <axis xyz="0 0 1" />
+      <limit effort="1000.0" lower="${-pi/4}" upper="${pi/4}" velocity="1000.0" />
+    </joint>
+    <link name="${prefix}FrontLeftSwivel">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/FrontLeftSwivel.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}FrontLeftWheel_Joint" type="continuous">
+      <origin xyz="0.0 1.61918 -0.003" rpy="0 0 0" />
+      <parent link="${prefix}FrontLeftSwivel" />
+      <child link="${prefix}FrontLeftWheel" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}FrontLeftWheel">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/FrontLeftWheel.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}FrontRightSwivel_Joint" type="revolute">
+      <origin xyz="3.56191 -1.61418 1.84622" rpy="0 0 0" />
+      <parent link="${prefix}Main" />
+      <child link="${prefix}FrontRightSwivel" />
+      <axis xyz="0 0 1" />
+      <limit effort="1000.0" lower="${-pi/4}" upper="${pi/4}" velocity="1000.0" />
+    </joint>
+    <link name="${prefix}FrontRightSwivel">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/FrontRightSwivel.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}FrontRightWheel_Joint" type="continuous">
+      <origin xyz="0.0 -1.61918 -0.003" rpy="0 0 0" />
+      <parent link="${prefix}FrontRightSwivel" />
+      <child link="${prefix}FrontRightWheel" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}FrontRightWheel">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/FrontRightWheel.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}RearLeftWheel_Joint" type="continuous">
+      <origin xyz="-3.56191 2.77434 1.84289" rpy="0 0 0" />
+      <parent link="${prefix}Main" />
+      <child link="${prefix}RearLeftWheel" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}RearLeftWheel">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/RearLeftWheel.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}RearRightWheel_Joint" type="continuous">
+      <origin xyz="-3.56191 -2.77434 1.84289" rpy="0 0 0" />
+      <parent link="${prefix}Main" />
+      <child link="${prefix}RearRightWheel" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}RearRightWheel">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/RearRightWheel.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}Push1_Joint" type="continuous">
+      <origin xyz="-0.9743 -0.00178 1.54515" rpy="0 ${-5.6/180.0 *pi} 0" />
+      <parent link="${prefix}Main" />
+      <child link="${prefix}Push1" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}Push1">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/Push1.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}Push3_Joint" type="prismatic">
+      <origin xyz="0.0 0.0 2.18448" rpy="0 0 0" />
+      <parent link="${prefix}Push1" />
+      <child link="${prefix}Push3" />
+      <axis xyz="0 0 1" />
+      <limit effort="1000.0" lower="0.0" upper="1.4" velocity="1000.0" />
+    </joint>
+    <link name="${prefix}Push3">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/Push3.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}BackPart_Joint" type="continuous">
+      <origin xyz="-4.24691 -0.00178 3.87289" rpy="0 0 0" />
+      <parent link="${prefix}Main" />
+      <child link="${prefix}BackPart" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}BackPart">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/BackPart.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}Cabin_Joint" type="fixed">
+      <origin xyz="3.590641 2.436792 5.43797" rpy="0 0 0" />
+      <parent link="${prefix}Main" />
+      <child link="${prefix}Cabin" />
+    </joint>
+    <link name="${prefix}Cabin">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/Cabin.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}Chair_Joint" type="fixed">
+      <origin xyz="0.074 0.0 -0.034" rpy="0 0 0" />
+      <parent link="${prefix}Cabin" />
+      <child link="${prefix}Chair" />
+    </joint>
+    <link name="${prefix}Chair">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/Chair.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}Cockpit_Joint" type="fixed">
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+      <parent link="${prefix}Cabin" />
+      <child link="${prefix}Cockpit" />
+    </joint>
+    <link name="${prefix}Cockpit">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/Cockpit.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}DoorRight_Joint" type="revolute">
+      <origin xyz="-0.071 -0.873 -0.082" rpy="0 0 0" />
+      <parent link="${prefix}Cabin" />
+      <child link="${prefix}DoorRight" />
+      <axis xyz="0 0 -1" />
+      <limit effort="1000.0" lower="0.0" upper="${pi/2}" velocity="1000.0" />
+    </joint>
+    <link name="${prefix}DoorRight">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/DoorRight.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}DoorLeft_Joint" type="revolute">
+      <origin xyz="3.519751 3.30997 6.02837" rpy="0 0 0" />
+      <parent link="${prefix}Main" />
+      <child link="${prefix}DoorLeft" />
+      <axis xyz="0 0 1" />
+      <limit effort="1000.0" lower="0.0" upper="${pi/2}" velocity="1000.0" />
+    </joint>
+    <link name="${prefix}DoorLeft">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/DoorLeft.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+  </xacro:macro>
+</robot>
