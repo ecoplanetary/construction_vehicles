@@ -49,16 +49,3 @@ Cat_395_Arm_Cylinder_2_Joint_vel_controller:
 Cat_395_Bucket_Cylinder_2_Joint_vel_controller:
   type: velocity_controllers/JointVelocityController
   joint: Cat_395_Bucket_Cylinder_2_Joint
-
-joint_trajectory_controller:
-  type: effort_controllers/JointTrajectoryController
-  joints:
-    - Cat_395_Cabin_Joint
-    - Cat_395_Boom_Cylinder_2_Joint
-    - Cat_395_Arm_Cylinder_2_Joint
-    - Cat_395_Bucket_Cylinder_2_Joint
-  gains:
-    Cat_395_Cabin_Joint: { p: 20000, i: 1000, d: 50 }
-    Cat_395_Boom_Cylinder_2_Joint: { p: 20000, i: 1000, d: 50 }
-    Cat_395_Arm_Cylinder_2_Joint: { p: 20000, i: 1000, d: 50 }
-    Cat_395_Bucket_Cylinder_2_Joint: { p: 20000, i: 1000, d: 50 }
