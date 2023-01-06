@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="haul_truck">
+
+  <xacro:include filename="$(find construction_vehicles)/haul_truck/description/urdf/haul_truck.xacro" />
+
+  <xacro:haul_truck prefix="Cat_797_" />
+
+</robot>
