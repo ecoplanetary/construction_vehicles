@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="caterpillar">
-  <xacro:macro name="caterpillar" params="prefix:=''">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="haul_truck">
+  <xacro:macro name="haul_truck" params="prefix:=''">
     <link name="${prefix}Main">
       <visual>
         <origin xyz="5.98719 0.0 3.1686" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/Main.dae" />
+          <mesh filename="package://construction_vehicles/haul_truck/description/meshes/visual/Main.dae" />
         </geometry>
       </visual>
     </link>
@@ -20,7 +20,7 @@
     <link name="${prefix}FrontLeftSwivel">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/FrontLeftSwivel.dae" />
+          <mesh filename="package://construction_vehicles/haul_truck/description/meshes/visual/FrontLeftSwivel.dae" />
         </geometry>
       </visual>
     </link>
@@ -34,7 +34,7 @@
     <link name="${prefix}FrontLeftWheel">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/FrontLeftWheel.dae" />
+          <mesh filename="package://construction_vehicles/haul_truck/description/meshes/visual/FrontLeftWheel.dae" />
         </geometry>
       </visual>
     </link>
@@ -49,7 +49,7 @@
     <link name="${prefix}FrontRightSwivel">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/FrontRightSwivel.dae" />
+          <mesh filename="package://construction_vehicles/haul_truck/description/meshes/visual/FrontRightSwivel.dae" />
         </geometry>
       </visual>
     </link>
@@ -63,7 +63,7 @@
     <link name="${prefix}FrontRightWheel">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/FrontRightWheel.dae" />
+          <mesh filename="package://construction_vehicles/haul_truck/description/meshes/visual/FrontRightWheel.dae" />
         </geometry>
       </visual>
     </link>
@@ -77,7 +77,7 @@
     <link name="${prefix}RearLeftWheel">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/RearLeftWheel.dae" />
+          <mesh filename="package://construction_vehicles/haul_truck/description/meshes/visual/RearLeftWheel.dae" />
         </geometry>
       </visual>
     </link>
@@ -91,7 +91,7 @@
     <link name="${prefix}RearRightWheel">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/RearRightWheel.dae" />
+          <mesh filename="package://construction_vehicles/haul_truck/description/meshes/visual/RearRightWheel.dae" />
         </geometry>
       </visual>
     </link>
@@ -105,7 +105,7 @@
     <link name="${prefix}Push1">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/Push1.dae" />
+          <mesh filename="package://construction_vehicles/haul_truck/description/meshes/visual/Push1.dae" />
         </geometry>
       </visual>
     </link>
@@ -120,7 +120,7 @@
     <link name="${prefix}Push3">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/Push3.dae" />
+          <mesh filename="package://construction_vehicles/haul_truck/description/meshes/visual/Push3.dae" />
         </geometry>
       </visual>
     </link>
@@ -134,7 +134,7 @@
     <link name="${prefix}BackPart">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/BackPart.dae" />
+          <mesh filename="package://construction_vehicles/haul_truck/description/meshes/visual/BackPart.dae" />
         </geometry>
       </visual>
     </link>
@@ -147,7 +147,7 @@
     <link name="${prefix}Cabin">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/Cabin.dae" />
+          <mesh filename="package://construction_vehicles/haul_truck/description/meshes/visual/Cabin.dae" />
         </geometry>
       </visual>
     </link>
@@ -160,7 +160,7 @@
     <link name="${prefix}Chair">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/Chair.dae" />
+          <mesh filename="package://construction_vehicles/haul_truck/description/meshes/visual/Chair.dae" />
         </geometry>
       </visual>
     </link>
@@ -173,7 +173,7 @@
     <link name="${prefix}Cockpit">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/Cockpit.dae" />
+          <mesh filename="package://construction_vehicles/haul_truck/description/meshes/visual/Cockpit.dae" />
         </geometry>
       </visual>
     </link>
@@ -188,7 +188,7 @@
     <link name="${prefix}DoorRight">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/DoorRight.dae" />
+          <mesh filename="package://construction_vehicles/haul_truck/description/meshes/visual/DoorRight.dae" />
         </geometry>
       </visual>
     </link>
@@ -203,7 +203,7 @@
     <link name="${prefix}DoorLeft">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/caterpillar/description/meshes/visual/DoorLeft.dae" />
+          <mesh filename="package://construction_vehicles/haul_truck/description/meshes/visual/DoorLeft.dae" />
         </geometry>
       </visual>
     </link>

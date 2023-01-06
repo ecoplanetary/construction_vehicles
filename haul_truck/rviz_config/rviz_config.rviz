@@ -8,7 +8,7 @@ Panels:
         - /Status1
         - /RobotModel1
       Splitter Ratio: 0.5
-    Tree Height: 1576
+    Tree Height: 1522
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -58,62 +58,77 @@ Visualization Manager:
       Enabled: true
       Links:
         All Links Enabled: true
-        Caterpillar_797_BackPart:
+        Cat_797_BackPart:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Caterpillar_797_Cabin:
+        Cat_797_Cabin:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Caterpillar_797_Chair:
+        Cat_797_Chair:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Caterpillar_797_FrontLeftSwivel:
+        Cat_797_Cockpit:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Caterpillar_797_FrontLeftWheel:
+        Cat_797_DoorLeft:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Caterpillar_797_FrontRightSwivel:
+        Cat_797_DoorRight:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Caterpillar_797_FrontRightWheel:
+        Cat_797_FrontLeftSwivel:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Caterpillar_797_Main:
+        Cat_797_FrontLeftWheel:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Caterpillar_797_Push1:
+        Cat_797_FrontRightSwivel:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Caterpillar_797_Push3:
+        Cat_797_FrontRightWheel:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Caterpillar_797_RearLeftWheel:
+        Cat_797_Main:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Caterpillar_797_RearRightWheel:
+        Cat_797_Push1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Cat_797_Push3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Cat_797_RearLeftWheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Cat_797_RearRightWheel:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -133,29 +148,35 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        Caterpillar_797_BackPart:
+        Cat_797_BackPart:
           Value: true
-        Caterpillar_797_Cabin:
+        Cat_797_Cabin:
           Value: true
-        Caterpillar_797_Chair:
+        Cat_797_Chair:
           Value: true
-        Caterpillar_797_FrontLeftSwivel:
+        Cat_797_Cockpit:
           Value: true
-        Caterpillar_797_FrontLeftWheel:
+        Cat_797_DoorLeft:
           Value: true
-        Caterpillar_797_FrontRightSwivel:
+        Cat_797_DoorRight:
           Value: true
-        Caterpillar_797_FrontRightWheel:
+        Cat_797_FrontLeftSwivel:
           Value: true
-        Caterpillar_797_Main:
+        Cat_797_FrontLeftWheel:
           Value: true
-        Caterpillar_797_Push1:
+        Cat_797_FrontRightSwivel:
           Value: true
-        Caterpillar_797_Push3:
+        Cat_797_FrontRightWheel:
           Value: true
-        Caterpillar_797_RearLeftWheel:
+        Cat_797_Main:
           Value: true
-        Caterpillar_797_RearRightWheel:
+        Cat_797_Push1:
+          Value: true
+        Cat_797_Push3:
+          Value: true
+        Cat_797_RearLeftWheel:
+          Value: true
+        Cat_797_RearRightWheel:
           Value: true
       Marker Alpha: 1
       Marker Scale: 1
@@ -164,24 +185,30 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        Caterpillar_797_Main:
-          Caterpillar_797_BackPart:
+        Cat_797_Main:
+          Cat_797_BackPart:
             {}
-          Caterpillar_797_Cabin:
-            Caterpillar_797_Chair:
+          Cat_797_Cabin:
+            Cat_797_Chair:
               {}
-          Caterpillar_797_FrontLeftSwivel:
-            Caterpillar_797_FrontLeftWheel:
+            Cat_797_Cockpit:
               {}
-          Caterpillar_797_FrontRightSwivel:
-            Caterpillar_797_FrontRightWheel:
+            Cat_797_DoorRight:
               {}
-          Caterpillar_797_Push1:
-            Caterpillar_797_Push3:
-              {}
-          Caterpillar_797_RearLeftWheel:
+          Cat_797_DoorLeft:
             {}
-          Caterpillar_797_RearRightWheel:
+          Cat_797_FrontLeftSwivel:
+            Cat_797_FrontLeftWheel:
+              {}
+          Cat_797_FrontRightSwivel:
+            Cat_797_FrontRightWheel:
+              {}
+          Cat_797_Push1:
+            Cat_797_Push3:
+              {}
+          Cat_797_RearLeftWheel:
+            {}
+          Cat_797_RearRightWheel:
             {}
       Update Interval: 0
       Value: true
@@ -189,7 +216,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: Caterpillar_797_Main
+    Fixed Frame: Cat_797_Main
     Frame Rate: 30
   Name: root
   Tools:
@@ -213,7 +240,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 18.625627517700195
+      Distance: 26.167665481567383
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -221,25 +248,25 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: -4.260256767272949
-        Y: -0.14858366549015045
-        Z: 3.13201904296875
+        X: -0.390301913022995
+        Y: 2.589698314666748
+        Z: 2.514925718307495
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.16539856791496277
+      Pitch: 0.15539857745170593
       Target Frame: <Fixed Frame>
-      Yaw: 0.9103978872299194
+      Yaw: 5.348574161529541
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 2086
+  Height: 2032
   Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd00000004000000000000055900000720fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b000000b000fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000b0fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000006e000007200000018200fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000015f00000720fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000006e000007200000013200fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e1000001970000000300000f000000005efc0100000002fb0000000800540069006d0065010000000000000f00000006dc00fffffffb0000000800540069006d00650100000000000004500000000000000000000008300000072000000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd000000040000000000000559000006eafc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b000000b000fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000b0fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000006e000006ea0000018200fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000015f000006eafc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000006e000006ea0000013200fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e1000001970000000300000e700000005efc0100000002fb0000000800540069006d0065010000000000000e70000006dc00fffffffb0000000800540069006d00650100000000000004500000000000000000000007a0000006ea00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -248,6 +275,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: false
-  Width: 3840
-  X: 0
-  Y: 0
+  Width: 3696
+  X: 3984
+  Y: 54

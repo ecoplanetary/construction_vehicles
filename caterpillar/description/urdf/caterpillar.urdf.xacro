@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<robot xmlns:xacro="http://wiki.ros.org/xacro" name="caterpillar">
-
-  <xacro:include filename="$(find construction_vehicles)/caterpillar/description/urdf/caterpillar.xacro" />
-
-  <xacro:caterpillar prefix="Caterpillar_797_" />
-
-</robot>

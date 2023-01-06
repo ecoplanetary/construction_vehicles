@@ -1,0 +1,5 @@
+<launch>
+
+  <param name="robot_description" command="xacro '$(find construction_vehicles)/haul_truck/description/urdf/haul_truck.urdf.xacro'" />
+  
+</launch>
