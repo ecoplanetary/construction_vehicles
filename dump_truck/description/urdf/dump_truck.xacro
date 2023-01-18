@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="dump_truck">
+  <xacro:macro name="dump_truck" params="prefix:=''">
+    <link name="${prefix}DumperChassis">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/DumperChassis.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}WheelRear1LeftJoint" type="continuous">
+      <origin xyz="-2.03074 1.169 0.889" rpy="0 0 0" />
+      <parent link="${prefix}DumperChassis" />
+      <child link="${prefix}WheelRear1Left" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}WheelRear1Left">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/WheelLeft.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}WheelRear1RightJoint" type="continuous">
+      <origin xyz="-2.03074 -1.169 0.889" rpy="0 0 0" />
+      <parent link="${prefix}DumperChassis" />
+      <child link="${prefix}WheelRear1Right" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}WheelRear1Right">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/WheelRight.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}WheelRear2LeftJoint" type="continuous">
+      <origin xyz="-3.99134 1.169 0.889" rpy="0 0 0" />
+      <parent link="${prefix}DumperChassis" />
+      <child link="${prefix}WheelRear2Left" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}WheelRear2Left">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/WheelLeft.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}WheelRear2RightJoint" type="continuous">
+      <origin xyz="-3.99134 -1.169 0.889" rpy="0 0 0" />
+      <parent link="${prefix}DumperChassis" />
+      <child link="${prefix}WheelRear2Right" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}WheelRear2Right">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/WheelRight.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}DumperJoint" type="continuous">
+      <origin xyz="-4.26 0 1.555" rpy="0 0 0" />
+      <parent link="${prefix}DumperChassis" />
+      <child link="${prefix}Dumper" />
+      <axis xyz="0 -1 0" />
+    </joint>
+    <link name="${prefix}Dumper">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/Dumper.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}DumperCylinderLeftJoint" type="continuous">
+      <origin xyz="0.185013 0.508895 1.26466" rpy="-0.1009 0.405 -0.311" />
+      <parent link="${prefix}DumperChassis" />
+      <child link="${prefix}DumperCylinderLeft" />
+      <axis xyz="0 0 1" />
+    </joint>
+    <link name="${prefix}DumperCylinderLeft">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/DumperCylinderLeftNoWires.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}DumperPistonLeftJoint" type="prismatic">
+      <origin xyz="-3.0 0 0" rpy="0 0 0" />
+      <parent link="${prefix}DumperCylinderLeft" />
+      <child link="${prefix}DumperPistonLeft" />
+      <axis xyz="-1 0 0" />
+      <limit effort="1000.0" lower="0" upper="1.8" velocity="1000.0" />
+    </joint>
+    <link name="${prefix}DumperPistonLeft">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/DumperPiston.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}DumperCylinderRightJoint" type="continuous">
+      <origin xyz="0.185013 -0.508895 1.26466" rpy="0.1009 0.405 0.311" />
+      <parent link="${prefix}DumperChassis" />
+      <child link="${prefix}DumperCylinderRight" />
+      <axis xyz="0 0 1" />
+    </joint>
+    <link name="${prefix}DumperCylinderRight">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/DumperCylinderRightNoWires.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}DumperPistonRightJoint" type="prismatic">
+      <origin xyz="-3.0 0 0" rpy="0 0 0" />
+      <parent link="${prefix}DumperCylinderRight" />
+      <child link="${prefix}DumperPistonRight" />
+      <axis xyz="-1 0 0" />
+      <limit effort="1000.0" lower="0" upper="1.8" velocity="1000.0" />
+    </joint>
+    <link name="${prefix}DumperPistonRight">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/DumperPiston.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}SteeringPistonLeftJoint" type="continuous">
+      <origin xyz="0.560 0.426 0.022" rpy="0 0 0" />
+      <parent link="${prefix}HeadTilt" />
+      <child link="${prefix}SteeringPistonLeft" />
+      <axis xyz="0 0 1" />
+    </joint>
+    <link name="${prefix}SteeringPistonLeft">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/SteeringPiston.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}SteeringPistonRightJoint" type="continuous">
+      <origin xyz="0.560 -0.426 0.022" rpy="0 0 0" />
+      <parent link="${prefix}HeadTilt" />
+      <child link="${prefix}SteeringPistonRight" />
+      <axis xyz="0 0 1" />
+    </joint>
+    <link name="${prefix}SteeringPistonRight">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/SteeringPiston.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}HeadTiltJoint" type="continuous">
+      <origin xyz="0 0 1.186" rpy="0 0 0" />
+      <parent link="${prefix}DumperChassis" />
+      <child link="${prefix}HeadTilt" />
+      <axis xyz="1 0 0" />
+    </joint>
+    <link name="${prefix}HeadTilt">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/HeadTilt.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}HeadJoint" type="revolute">
+      <origin xyz="0.8543 0 0" rpy="0 0 0" />
+      <parent link="${prefix}HeadTilt" />
+      <child link="${prefix}Head" />
+      <axis xyz="0 0 1" />
+      <limit effort="1000.0" lower="${-pi/4}" upper="${pi/4}" velocity="1000.0" />
+    </joint>
+    <link name="${prefix}Head">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/HeadNoWires.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}WheelFrontLeftJoint" type="continuous">
+      <origin xyz="1.366 1.169 -0.297" rpy="0 0 0" />
+      <parent link="${prefix}Head" />
+      <child link="${prefix}WheelFrontLeft" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}WheelFrontLeft">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/WheelLeft.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}WheelFrontRightJoint" type="continuous">
+      <origin xyz="1.366 -1.169 -0.297" rpy="0 0 0" />
+      <parent link="${prefix}Head" />
+      <child link="${prefix}WheelFrontRight" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}WheelFrontRight">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/WheelRight.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}SteeringCylinderLeftJoint" type="continuous">
+      <origin xyz="0.788 0.425 0.020" rpy="0 0 0" />
+      <parent link="${prefix}Head" />
+      <child link="${prefix}SteeringCylinderLeft" />
+      <axis xyz="0 0 1" />
+    </joint>
+    <link name="${prefix}SteeringCylinderLeft">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/SteeringCylinder.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}SteeringCylinderRightJoint" type="continuous">
+      <origin xyz="0.788 -0.425 0.020" rpy="0 0 0" />
+      <parent link="${prefix}Head" />
+      <child link="${prefix}SteeringCylinderRight" />
+      <axis xyz="0 0 1" />
+    </joint>
+    <link name="${prefix}SteeringCylinderRight">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/SteeringCylinder.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+  </xacro:macro>
+</robot>

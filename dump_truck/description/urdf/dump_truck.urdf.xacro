@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="dump_truck">
+
+  <xacro:include filename="$(find construction_vehicles)/dump_truck/description/urdf/dump_truck.xacro" />
+
+  <xacro:dump_truck prefix="Cat_740_" />
+
+</robot>
