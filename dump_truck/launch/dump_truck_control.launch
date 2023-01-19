@@ -1,0 +1,9 @@
+<launch>
+
+  <!-- Load controller manager -->
+  <rosparam command="load" file="$(find construction_vehicles)/dump_truck/config/default_controllers.yaml" />
+  <node name="dump_truck_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="spawn 
+		joint_state_controller 
+		joint_group_position_controller" />
+
+</launch>

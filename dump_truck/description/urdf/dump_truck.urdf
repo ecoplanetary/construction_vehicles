@@ -12,7 +12,7 @@
       </geometry>
     </visual>
   </link>
-  <joint name="Cat_740_WheelRear1LeftJoint" type="continuous">
+  <joint name="Cat_740_WheelRear1Left_Joint" type="continuous">
     <origin rpy="0 0 0" xyz="-2.03074 1.169 0.889"/>
     <parent link="Cat_740_DumperChassis"/>
     <child link="Cat_740_WheelRear1Left"/>
@@ -25,7 +25,7 @@
       </geometry>
     </visual>
   </link>
-  <joint name="Cat_740_WheelRear1RightJoint" type="continuous">
+  <joint name="Cat_740_WheelRear1Right_Joint" type="continuous">
     <origin rpy="0 0 0" xyz="-2.03074 -1.169 0.889"/>
     <parent link="Cat_740_DumperChassis"/>
     <child link="Cat_740_WheelRear1Right"/>
@@ -38,7 +38,7 @@
       </geometry>
     </visual>
   </link>
-  <joint name="Cat_740_WheelRear2LeftJoint" type="continuous">
+  <joint name="Cat_740_WheelRear2Left_Joint" type="continuous">
     <origin rpy="0 0 0" xyz="-3.99134 1.169 0.889"/>
     <parent link="Cat_740_DumperChassis"/>
     <child link="Cat_740_WheelRear2Left"/>
@@ -51,7 +51,7 @@
       </geometry>
     </visual>
   </link>
-  <joint name="Cat_740_WheelRear2RightJoint" type="continuous">
+  <joint name="Cat_740_WheelRear2Right_Joint" type="continuous">
     <origin rpy="0 0 0" xyz="-3.99134 -1.169 0.889"/>
     <parent link="Cat_740_DumperChassis"/>
     <child link="Cat_740_WheelRear2Right"/>
@@ -64,7 +64,7 @@
       </geometry>
     </visual>
   </link>
-  <joint name="Cat_740_DumperJoint" type="continuous">
+  <joint name="Cat_740_Dumper_Joint" type="continuous">
     <origin rpy="0 0 0" xyz="-4.26 0 1.555"/>
     <parent link="Cat_740_DumperChassis"/>
     <child link="Cat_740_Dumper"/>
@@ -77,9 +77,22 @@
       </geometry>
     </visual>
   </link>
-  <joint name="Cat_740_DumperCylinderLeftJoint" type="continuous">
-    <origin rpy="-0.1009 0.405 -0.311" xyz="0.185013 0.508895 1.26466"/>
+  <joint name="Cat_740_DumperHolder_Joint" type="continuous">
+    <origin rpy="0 0 0" xyz="0.197641 0 1.27301"/>
     <parent link="Cat_740_DumperChassis"/>
+    <child link="Cat_740_DumperHolder"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="Cat_740_DumperHolder">
+    <visual>
+      <geometry>
+        <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/DumperHolder.dae"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="Cat_740_DumperCylinderLeft_Joint" type="continuous">
+    <origin rpy="-0.1009 0.405 -0.311" xyz="-0.013 0.509 -0.008"/>
+    <parent link="Cat_740_DumperHolder"/>
     <child link="Cat_740_DumperCylinderLeft"/>
     <axis xyz="0 0 1"/>
   </joint>
@@ -90,7 +103,7 @@
       </geometry>
     </visual>
   </link>
-  <joint name="Cat_740_DumperPistonLeftJoint" type="prismatic">
+  <joint name="Cat_740_DumperPistonLeft_Joint" type="prismatic">
     <origin rpy="0 0 0" xyz="-3.0 0 0"/>
     <parent link="Cat_740_DumperCylinderLeft"/>
     <child link="Cat_740_DumperPistonLeft"/>
@@ -104,9 +117,22 @@
       </geometry>
     </visual>
   </link>
-  <joint name="Cat_740_DumperCylinderRightJoint" type="continuous">
-    <origin rpy="0.1009 0.405 0.311" xyz="0.185013 -0.508895 1.26466"/>
-    <parent link="Cat_740_DumperChassis"/>
+  <joint name="Cat_740_DumperPistonHeadLeft_Joint" type="continuous">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="Cat_740_DumperPistonLeft"/>
+    <child link="Cat_740_DumperPistonHeadLeft"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="Cat_740_DumperPistonHeadLeft">
+    <visual>
+      <geometry>
+        <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/DumperPistonHead.dae"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="Cat_740_DumperCylinderRight_Joint" type="continuous">
+    <origin rpy="0.1009 0.405 0.311" xyz="-0.013 -0.509 -0.008"/>
+    <parent link="Cat_740_DumperHolder"/>
     <child link="Cat_740_DumperCylinderRight"/>
     <axis xyz="0 0 1"/>
   </joint>
@@ -117,7 +143,7 @@
       </geometry>
     </visual>
   </link>
-  <joint name="Cat_740_DumperPistonRightJoint" type="prismatic">
+  <joint name="Cat_740_DumperPistonRight_Joint" type="prismatic">
     <origin rpy="0 0 0" xyz="-3.0 0 0"/>
     <parent link="Cat_740_DumperCylinderRight"/>
     <child link="Cat_740_DumperPistonRight"/>
@@ -131,7 +157,20 @@
       </geometry>
     </visual>
   </link>
-  <joint name="Cat_740_SteeringPistonLeftJoint" type="continuous">
+  <joint name="Cat_740_DumperPistonHeadRight_Joint" type="continuous">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="Cat_740_DumperPistonRight"/>
+    <child link="Cat_740_DumperPistonHeadRight"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="Cat_740_DumperPistonHeadRight">
+    <visual>
+      <geometry>
+        <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/DumperPistonHead.dae"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="Cat_740_SteeringPistonLeft_Joint" type="continuous">
     <origin rpy="0 0 0" xyz="0.560 0.426 0.022"/>
     <parent link="Cat_740_HeadTilt"/>
     <child link="Cat_740_SteeringPistonLeft"/>
@@ -144,7 +183,7 @@
       </geometry>
     </visual>
   </link>
-  <joint name="Cat_740_SteeringPistonRightJoint" type="continuous">
+  <joint name="Cat_740_SteeringPistonRight_Joint" type="continuous">
     <origin rpy="0 0 0" xyz="0.560 -0.426 0.022"/>
     <parent link="Cat_740_HeadTilt"/>
     <child link="Cat_740_SteeringPistonRight"/>
@@ -157,7 +196,7 @@
       </geometry>
     </visual>
   </link>
-  <joint name="Cat_740_HeadTiltJoint" type="continuous">
+  <joint name="Cat_740_HeadTilt_Joint" type="continuous">
     <origin rpy="0 0 0" xyz="0 0 1.186"/>
     <parent link="Cat_740_DumperChassis"/>
     <child link="Cat_740_HeadTilt"/>
@@ -170,7 +209,7 @@
       </geometry>
     </visual>
   </link>
-  <joint name="Cat_740_HeadJoint" type="revolute">
+  <joint name="Cat_740_Head_Joint" type="revolute">
     <origin rpy="0 0 0" xyz="0.8543 0 0"/>
     <parent link="Cat_740_HeadTilt"/>
     <child link="Cat_740_Head"/>
@@ -184,7 +223,7 @@
       </geometry>
     </visual>
   </link>
-  <joint name="Cat_740_WheelFrontLeftJoint" type="continuous">
+  <joint name="Cat_740_WheelFrontLeft_Joint" type="continuous">
     <origin rpy="0 0 0" xyz="1.366 1.169 -0.297"/>
     <parent link="Cat_740_Head"/>
     <child link="Cat_740_WheelFrontLeft"/>
@@ -197,7 +236,7 @@
       </geometry>
     </visual>
   </link>
-  <joint name="Cat_740_WheelFrontRightJoint" type="continuous">
+  <joint name="Cat_740_WheelFrontRight_Joint" type="continuous">
     <origin rpy="0 0 0" xyz="1.366 -1.169 -0.297"/>
     <parent link="Cat_740_Head"/>
     <child link="Cat_740_WheelFrontRight"/>
@@ -210,7 +249,7 @@
       </geometry>
     </visual>
   </link>
-  <joint name="Cat_740_SteeringCylinderLeftJoint" type="continuous">
+  <joint name="Cat_740_SteeringCylinderLeft_Joint" type="continuous">
     <origin rpy="0 0 0" xyz="0.788 0.425 0.020"/>
     <parent link="Cat_740_Head"/>
     <child link="Cat_740_SteeringCylinderLeft"/>
@@ -223,7 +262,7 @@
       </geometry>
     </visual>
   </link>
-  <joint name="Cat_740_SteeringCylinderRightJoint" type="continuous">
+  <joint name="Cat_740_SteeringCylinderRight_Joint" type="continuous">
     <origin rpy="0 0 0" xyz="0.788 -0.425 0.020"/>
     <parent link="Cat_740_Head"/>
     <child link="Cat_740_SteeringCylinderRight"/>

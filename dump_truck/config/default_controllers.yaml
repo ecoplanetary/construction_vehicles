@@ -5,32 +5,15 @@ joint_state_controller:
 joint_group_position_controller:
   type: position_controllers/JointGroupPositionController
   joints: 
-    - Cat_982XE_P03_Joint
-    - Cat_982XE_P05_Joint
-    - Cat_982XE_P07_Joint
-    - Cat_982XE_P010_Joint
-    - Cat_982XE_P011_Joint
-    - Cat_982XE_P012_Joint
-
-Cat_982XE_P02_Joint_controller:
-  type: position_controllers/JointPositionController
-  joint: Cat_982XE_P02_Joint
-
-Cat_982XE_P06_Joint_controller:
-  type: position_controllers/JointPositionController
-  joint: Cat_982XE_P06_Joint
-
-Cat_982XE_P08_Joint_controller:
-  type: position_controllers/JointPositionController
-  joint: Cat_982XE_P08_Joint
-
-joint_trajectory_controller:
-  type: effort_controllers/JointTrajectoryController
-  joints:
-    - Cat_982XE_P02_Joint
-    - Cat_982XE_P06_Joint
-    - Cat_982XE_P08_Joint
-  gains:
-    Cat_982XE_P02_Joint: { p: 20000, i: 1000, d: 50 }
-    Cat_982XE_P06_Joint: { p: 20000, i: 1000, d: 50 }
-    Cat_982XE_P08_Joint: { p: 20000, i: 1000, d: 50 }
+    - Cat_740_Dumper_Joint
+    - Cat_740_DumperHolder_Joint
+    - Cat_740_DumperCylinderLeft_Joint
+    - Cat_740_DumperCylinderRight_Joint
+    - Cat_740_SteeringCylinderLeft_Joint
+    - Cat_740_SteeringCylinderRight_Joint
+    - Cat_740_DumperPistonLeft_Joint
+    - Cat_740_DumperPistonRight_Joint
+    - Cat_740_DumperPistonHeadLeft_Joint
+    - Cat_740_DumperPistonHeadRight_Joint
+    - Cat_740_SteeringPistonLeft_Joint
+    - Cat_740_SteeringPistonRight_Joint

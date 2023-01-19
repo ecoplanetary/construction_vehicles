@@ -10,7 +10,7 @@
       </visual>
     </link>
 
-    <joint name="${prefix}WheelRear1LeftJoint" type="continuous">
+    <joint name="${prefix}WheelRear1Left_Joint" type="continuous">
       <origin xyz="-2.03074 1.169 0.889" rpy="0 0 0" />
       <parent link="${prefix}DumperChassis" />
       <child link="${prefix}WheelRear1Left" />
@@ -24,7 +24,7 @@
       </visual>
     </link>
 
-    <joint name="${prefix}WheelRear1RightJoint" type="continuous">
+    <joint name="${prefix}WheelRear1Right_Joint" type="continuous">
       <origin xyz="-2.03074 -1.169 0.889" rpy="0 0 0" />
       <parent link="${prefix}DumperChassis" />
       <child link="${prefix}WheelRear1Right" />
@@ -38,7 +38,7 @@
       </visual>
     </link>
 
-    <joint name="${prefix}WheelRear2LeftJoint" type="continuous">
+    <joint name="${prefix}WheelRear2Left_Joint" type="continuous">
       <origin xyz="-3.99134 1.169 0.889" rpy="0 0 0" />
       <parent link="${prefix}DumperChassis" />
       <child link="${prefix}WheelRear2Left" />
@@ -52,7 +52,7 @@
       </visual>
     </link>
 
-    <joint name="${prefix}WheelRear2RightJoint" type="continuous">
+    <joint name="${prefix}WheelRear2Right_Joint" type="continuous">
       <origin xyz="-3.99134 -1.169 0.889" rpy="0 0 0" />
       <parent link="${prefix}DumperChassis" />
       <child link="${prefix}WheelRear2Right" />
@@ -66,7 +66,7 @@
       </visual>
     </link>
 
-    <joint name="${prefix}DumperJoint" type="continuous">
+    <joint name="${prefix}Dumper_Joint" type="continuous">
       <origin xyz="-4.26 0 1.555" rpy="0 0 0" />
       <parent link="${prefix}DumperChassis" />
       <child link="${prefix}Dumper" />
@@ -80,9 +80,23 @@
       </visual>
     </link>
 
-    <joint name="${prefix}DumperCylinderLeftJoint" type="continuous">
-      <origin xyz="0.185013 0.508895 1.26466" rpy="-0.1009 0.405 -0.311" />
+    <joint name="${prefix}DumperHolder_Joint" type="continuous">
+      <origin xyz="0.197641 0 1.27301" rpy="0 0 0" />
       <parent link="${prefix}DumperChassis" />
+      <child link="${prefix}DumperHolder" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}DumperHolder">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/DumperHolder.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}DumperCylinderLeft_Joint" type="continuous">
+      <origin xyz="-0.013 0.509 -0.008" rpy="-0.1009 0.405 -0.311" />
+      <parent link="${prefix}DumperHolder" />
       <child link="${prefix}DumperCylinderLeft" />
       <axis xyz="0 0 1" />
     </joint>
@@ -94,7 +108,7 @@
       </visual>
     </link>
 
-    <joint name="${prefix}DumperPistonLeftJoint" type="prismatic">
+    <joint name="${prefix}DumperPistonLeft_Joint" type="prismatic">
       <origin xyz="-3.0 0 0" rpy="0 0 0" />
       <parent link="${prefix}DumperCylinderLeft" />
       <child link="${prefix}DumperPistonLeft" />
@@ -109,9 +123,23 @@
       </visual>
     </link>
 
-    <joint name="${prefix}DumperCylinderRightJoint" type="continuous">
-      <origin xyz="0.185013 -0.508895 1.26466" rpy="0.1009 0.405 0.311" />
-      <parent link="${prefix}DumperChassis" />
+    <joint name="${prefix}DumperPistonHeadLeft_Joint" type="continuous">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="${prefix}DumperPistonLeft" />
+      <child link="${prefix}DumperPistonHeadLeft" />
+      <axis xyz="1 0 0" />
+    </joint>
+    <link name="${prefix}DumperPistonHeadLeft">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/DumperPistonHead.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}DumperCylinderRight_Joint" type="continuous">
+      <origin xyz="-0.013 -0.509 -0.008" rpy="0.1009 0.405 0.311" />
+      <parent link="${prefix}DumperHolder" />
       <child link="${prefix}DumperCylinderRight" />
       <axis xyz="0 0 1" />
     </joint>
@@ -123,7 +151,7 @@
       </visual>
     </link>
 
-    <joint name="${prefix}DumperPistonRightJoint" type="prismatic">
+    <joint name="${prefix}DumperPistonRight_Joint" type="prismatic">
       <origin xyz="-3.0 0 0" rpy="0 0 0" />
       <parent link="${prefix}DumperCylinderRight" />
       <child link="${prefix}DumperPistonRight" />
@@ -138,7 +166,21 @@
       </visual>
     </link>
 
-    <joint name="${prefix}SteeringPistonLeftJoint" type="continuous">
+    <joint name="${prefix}DumperPistonHeadRight_Joint" type="continuous">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="${prefix}DumperPistonRight" />
+      <child link="${prefix}DumperPistonHeadRight" />
+      <axis xyz="1 0 0" />
+    </joint>
+    <link name="${prefix}DumperPistonHeadRight">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/dump_truck/description/meshes/visual/DumperPistonHead.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}SteeringPistonLeft_Joint" type="continuous">
       <origin xyz="0.560 0.426 0.022" rpy="0 0 0" />
       <parent link="${prefix}HeadTilt" />
       <child link="${prefix}SteeringPistonLeft" />
@@ -152,7 +194,7 @@
       </visual>
     </link>
 
-    <joint name="${prefix}SteeringPistonRightJoint" type="continuous">
+    <joint name="${prefix}SteeringPistonRight_Joint" type="continuous">
       <origin xyz="0.560 -0.426 0.022" rpy="0 0 0" />
       <parent link="${prefix}HeadTilt" />
       <child link="${prefix}SteeringPistonRight" />
@@ -166,7 +208,7 @@
       </visual>
     </link>
 
-    <joint name="${prefix}HeadTiltJoint" type="continuous">
+    <joint name="${prefix}HeadTilt_Joint" type="continuous">
       <origin xyz="0 0 1.186" rpy="0 0 0" />
       <parent link="${prefix}DumperChassis" />
       <child link="${prefix}HeadTilt" />
@@ -180,7 +222,7 @@
       </visual>
     </link>
 
-    <joint name="${prefix}HeadJoint" type="revolute">
+    <joint name="${prefix}Head_Joint" type="revolute">
       <origin xyz="0.8543 0 0" rpy="0 0 0" />
       <parent link="${prefix}HeadTilt" />
       <child link="${prefix}Head" />
@@ -195,7 +237,7 @@
       </visual>
     </link>
 
-    <joint name="${prefix}WheelFrontLeftJoint" type="continuous">
+    <joint name="${prefix}WheelFrontLeft_Joint" type="continuous">
       <origin xyz="1.366 1.169 -0.297" rpy="0 0 0" />
       <parent link="${prefix}Head" />
       <child link="${prefix}WheelFrontLeft" />
@@ -209,7 +251,7 @@
       </visual>
     </link>
 
-    <joint name="${prefix}WheelFrontRightJoint" type="continuous">
+    <joint name="${prefix}WheelFrontRight_Joint" type="continuous">
       <origin xyz="1.366 -1.169 -0.297" rpy="0 0 0" />
       <parent link="${prefix}Head" />
       <child link="${prefix}WheelFrontRight" />
@@ -223,7 +265,7 @@
       </visual>
     </link>
 
-    <joint name="${prefix}SteeringCylinderLeftJoint" type="continuous">
+    <joint name="${prefix}SteeringCylinderLeft_Joint" type="continuous">
       <origin xyz="0.788 0.425 0.020" rpy="0 0 0" />
       <parent link="${prefix}Head" />
       <child link="${prefix}SteeringCylinderLeft" />
@@ -237,7 +279,7 @@
       </visual>
     </link>
 
-    <joint name="${prefix}SteeringCylinderRightJoint" type="continuous">
+    <joint name="${prefix}SteeringCylinderRight_Joint" type="continuous">
       <origin xyz="0.788 -0.425 0.020" rpy="0 0 0" />
       <parent link="${prefix}Head" />
       <child link="${prefix}SteeringCylinderRight" />

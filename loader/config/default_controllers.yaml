@@ -23,14 +23,3 @@ Cat_982XE_P06_Joint_controller:
 Cat_982XE_P08_Joint_controller:
   type: position_controllers/JointPositionController
   joint: Cat_982XE_P08_Joint
-
-joint_trajectory_controller:
-  type: effort_controllers/JointTrajectoryController
-  joints:
-    - Cat_982XE_P02_Joint
-    - Cat_982XE_P06_Joint
-    - Cat_982XE_P08_Joint
-  gains:
-    Cat_982XE_P02_Joint: { p: 20000, i: 1000, d: 50 }
-    Cat_982XE_P06_Joint: { p: 20000, i: 1000, d: 50 }
-    Cat_982XE_P08_Joint: { p: 20000, i: 1000, d: 50 }
