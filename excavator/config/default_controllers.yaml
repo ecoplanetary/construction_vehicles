@@ -6,13 +6,13 @@ joint_group_position_controller:
   type: position_controllers/JointGroupPositionController
   joints: 
     - Cat_395_Boom_Joint
-    - Cat_395_Boom_Cylinder_1_Joint
+    - Cat_395_BoomCylinder1_Joint
     - Cat_395_Arm_Joint
-    - Cat_395_Arm_Cylinder_1_Joint
+    - Cat_395_ArmCylinder1_Joint
     - Cat_395_Bucket_Joint
-    - Cat_395_Bucket_Cylinder_1_Joint
-    - Cat_395_Part_11_Joint
-    - Cat_395_Part_12_Joint
+    - Cat_395_BucketCylinder1_Joint
+    - Cat_395_Part11_Joint
+    - Cat_395_Part12_Joint
 
 Cat_395_Door_Joint_controller:
   type: position_controllers/JointPositionController
@@ -22,30 +22,30 @@ Cat_395_Cabin_Joint_pos_controller:
   type: position_controllers/JointPositionController
   joint: Cat_395_Cabin_Joint
 
-Cat_395_Boom_Cylinder_2_Joint_pos_controller:
+Cat_395_BoomCylinder2_Joint_pos_controller:
   type: position_controllers/JointPositionController
-  joint: Cat_395_Boom_Cylinder_2_Joint
+  joint: Cat_395_BoomCylinder2_Joint
 
-Cat_395_Arm_Cylinder_2_Joint_pos_controller:
+Cat_395_ArmCylinder2_Joint_pos_controller:
   type: position_controllers/JointPositionController
-  joint: Cat_395_Arm_Cylinder_2_Joint
+  joint: Cat_395_ArmCylinder2_Joint
 
-Cat_395_Bucket_Cylinder_2_Joint_pos_controller:
+Cat_395_BucketCylinder2_Joint_pos_controller:
   type: position_controllers/JointPositionController
-  joint: Cat_395_Bucket_Cylinder_2_Joint
+  joint: Cat_395_BucketCylinder2_Joint
 
 Cat_395_Cabin_Joint_vel_controller:
   type: velocity_controllers/JointVelocityController
   joint: Cat_395_Cabin_Joint
 
-Cat_395_Boom_Cylinder_2_Joint_vel_controller:
+Cat_395_BoomCylinder2_Joint_vel_controller:
   type: velocity_controllers/JointVelocityController
-  joint: Cat_395_Boom_Cylinder_2_Joint
+  joint: Cat_395_BoomCylinder2_Joint
 
-Cat_395_Arm_Cylinder_2_Joint_vel_controller:
+Cat_395_ArmCylinder2_Joint_vel_controller:
   type: velocity_controllers/JointVelocityController
-  joint: Cat_395_Arm_Cylinder_2_Joint
+  joint: Cat_395_ArmCylinder2_Joint
 
-Cat_395_Bucket_Cylinder_2_Joint_vel_controller:
+Cat_395_BucketCylinder2_Joint_vel_controller:
   type: velocity_controllers/JointVelocityController
-  joint: Cat_395_Bucket_Cylinder_2_Joint
+  joint: Cat_395_BucketCylinder2_Joint

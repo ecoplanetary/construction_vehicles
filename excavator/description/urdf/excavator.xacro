@@ -5,17 +5,17 @@
       <visual>
         <origin xyz="0.0 0.0 0.793384" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Base_Without_Wheels.dae" />
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/BaseWithoutWheels.dae" />
         </geometry>
       </visual>
     </link>
 
-    <joint name="${prefix}Track_Left_Joint" type="fixed">
+    <joint name="${prefix}TrackLeft_Joint" type="fixed">
       <origin xyz="-0.02904 1.709747 0.764672" rpy="0 0 0" />
       <parent link="${prefix}Base" />
-      <child link="${prefix}Track_Left" />
+      <child link="${prefix}TrackLeft" />
     </joint>
-    <link name="${prefix}Track_Left">
+    <link name="${prefix}TrackLeft">
       <visual>
         <geometry>
           <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Track.dae" />
@@ -23,12 +23,12 @@
       </visual>
     </link>
 
-    <joint name="${prefix}Track_Right_Joint" type="fixed">
+    <joint name="${prefix}TrackRight_Joint" type="fixed">
       <origin xyz="-0.02904 -1.709747 0.764672" rpy="0 0 0" />
       <parent link="${prefix}Base" />
-      <child link="${prefix}Track_Right" />
+      <child link="${prefix}TrackRight" />
     </joint>
-    <link name="${prefix}Track_Right">
+    <link name="${prefix}TrackRight">
       <visual>
         <geometry>
           <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Track.dae" />
@@ -36,41 +36,41 @@
       </visual>
     </link>
 
-    <joint name="${prefix}Motor_Left_Joint" type="continuous">
+    <joint name="${prefix}MotorLeft_Joint" type="continuous">
       <origin xyz="-2.56148 1.8052 0.707696" rpy="0 0 0" />
       <parent link="${prefix}Base" />
-      <child link="${prefix}Motor_Left" />
+      <child link="${prefix}MotorLeft" />
       <axis xyz="0 -1 0" />
     </joint>
-    <link name="${prefix}Motor_Left">
+    <link name="${prefix}MotorLeft">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Motor_Left.dae" />
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/MotorLeft.dae" />
         </geometry>
       </visual>
     </link>
 
-    <joint name="${prefix}Motor_Right_Joint" type="continuous">
+    <joint name="${prefix}MotorRight_Joint" type="continuous">
       <origin xyz="-2.56148 -1.8052 0.707696" rpy="0 0 0" />
       <parent link="${prefix}Base" />
-      <child link="${prefix}Motor_Right" />
+      <child link="${prefix}MotorRight" />
       <axis xyz="0 -1 0" />
     </joint>
-    <link name="${prefix}Motor_Right">
+    <link name="${prefix}MotorRight">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Motor_Right.dae" />
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/MotorRight.dae" />
         </geometry>
       </visual>
     </link>
 
-    <joint name="${prefix}Wheel_Left_Joint" type="continuous">
+    <joint name="${prefix}WheelLeft_Joint" type="continuous">
       <origin xyz="2.65099 1.70966 0.707697" rpy="0 0 0" />
       <parent link="${prefix}Base" />
-      <child link="${prefix}Wheel_Left" />
+      <child link="${prefix}WheelLeft" />
       <axis xyz="0 -1 0" />
     </joint>
-    <link name="${prefix}Wheel_Left">
+    <link name="${prefix}WheelLeft">
       <visual>
         <geometry>
           <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Wheel.dae" />
@@ -78,13 +78,13 @@
       </visual>
     </link>
 
-    <joint name="${prefix}Wheel_Right_Joint" type="continuous">
+    <joint name="${prefix}WheelRight_Joint" type="continuous">
       <origin xyz="2.65099 -1.70966 0.707697" rpy="0 0 0" />
       <parent link="${prefix}Base" />
-      <child link="${prefix}Wheel_Right" />
+      <child link="${prefix}WheelRight" />
       <axis xyz="0 -1 0" />
     </joint>
-    <link name="${prefix}Wheel_Right">
+    <link name="${prefix}WheelRight">
       <visual>
         <geometry>
           <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Wheel.dae" />
@@ -102,7 +102,7 @@
     <link name="${prefix}Cabin">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Cabin_No_Wires.dae" />
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/CabinNoWires.dae" />
         </geometry>
       </visual>
     </link>
@@ -131,79 +131,79 @@
     <link name="${prefix}Boom">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Boom_No_Wires.dae" />
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/BoomNoWires.dae" />
         </geometry>
       </visual>
     </link>
 
-    <joint name="${prefix}Boom_Cylinder_1_Joint" type="continuous">
+    <joint name="${prefix}BoomCylinder1_Joint" type="continuous">
       <origin xyz="1.269 0.0 1.167" rpy="0 ${34/180 * pi} 0" />
       <parent link="${prefix}Cabin" />
-      <child link="${prefix}Boom_Cylinder_1" />
+      <child link="${prefix}BoomCylinder1" />
       <axis xyz="0 1 0" />
     </joint>
-    <link name="${prefix}Boom_Cylinder_1">
+    <link name="${prefix}BoomCylinder1">
       <visual>
         <origin xyz="0.0 0.506 0.0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Boom_Cylinder_Left_1.dae" />
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/BoomCylinderLeft1.dae" />
         </geometry>
       </visual>
       <visual>
         <origin xyz="0.0 -0.506 0.0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Boom_Cylinder_Right_1.dae" />
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/BoomCylinderRight1.dae" />
         </geometry>
       </visual>
     </link>
 
-    <joint name="${prefix}Boom_Cylinder_2_Joint" type="prismatic">
+    <joint name="${prefix}BoomCylinder2_Joint" type="prismatic">
       <origin xyz="0.0 0.0 4.13344" rpy="0 0 0" />
-      <parent link="${prefix}Boom_Cylinder_1" />
-      <child link="${prefix}Boom_Cylinder_2" />
+      <parent link="${prefix}BoomCylinder1" />
+      <child link="${prefix}BoomCylinder2" />
       <axis xyz="0 0 1" />
       <limit lower="-1.70" upper="0.31" effort="1000.0" velocity="1000.0" />
     </joint>
-    <link name="${prefix}Boom_Cylinder_2">
+    <link name="${prefix}BoomCylinder2">
       <visual>
         <origin xyz="0.0 0.506 0.0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Boom_Cylinder_Left_2.dae" />
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/BoomCylinderLeft2.dae" />
         </geometry>
       </visual>
       <visual>
         <origin xyz="0.0 -0.506 0.0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Boom_Cylinder_Right_2.dae" />
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/BoomCylinderRight2.dae" />
         </geometry>
       </visual>
     </link>
 
-    <joint name="${prefix}Arm_Cylinder_1_Joint" type="continuous">
+    <joint name="${prefix}ArmCylinder1_Joint" type="continuous">
       <origin xyz="2.605 0.000 3.306" rpy="0 ${81/180 * pi} 0" />
       <parent link="${prefix}Boom" />
-      <child link="${prefix}Arm_Cylinder_1" />
+      <child link="${prefix}ArmCylinder1" />
       <axis xyz="0 1 0" />
     </joint>
-    <link name="${prefix}Arm_Cylinder_1">
+    <link name="${prefix}ArmCylinder1">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Arm_Cylinder_1.dae" />
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/ArmCylinder1.dae" />
         </geometry>
       </visual>
     </link>
 
-    <joint name="${prefix}Arm_Cylinder_2_Joint" type="prismatic">
+    <joint name="${prefix}ArmCylinder2_Joint" type="prismatic">
       <origin xyz="0.0 0.0 4.76576" rpy="0 0 0" />
-      <parent link="${prefix}Arm_Cylinder_1" />
-      <child link="${prefix}Arm_Cylinder_2" />
+      <parent link="${prefix}ArmCylinder1" />
+      <child link="${prefix}ArmCylinder2" />
       <axis xyz="0 0 1" />
       <limit lower="-1.6" upper="0.38" effort="1000.0" velocity="1000.0" />
     </joint>
-    <link name="${prefix}Arm_Cylinder_2">
+    <link name="${prefix}ArmCylinder2">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Arm_Cylinder_2.dae" />
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/ArmCylinder2.dae" />
         </geometry>
       </visual>
     </link>
@@ -222,45 +222,45 @@
       </visual>
     </link>
 
-    <joint name="${prefix}Bucket_Cylinder_1_Joint" type="continuous">
+    <joint name="${prefix}BucketCylinder1_Joint" type="continuous">
       <origin xyz="0.999 0.000 1.120" rpy="0 ${-8.97/180 * pi} 0" />
       <parent link="${prefix}Arm" />
-      <child link="${prefix}Bucket_Cylinder_1" />
+      <child link="${prefix}BucketCylinder1" />
       <axis xyz="0 1 0" />
     </joint>
-    <link name="${prefix}Bucket_Cylinder_1">
+    <link name="${prefix}BucketCylinder1">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Bucket_Cylinder_1.dae" />
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/BucketCylinder1.dae" />
         </geometry>
       </visual>
     </link>
 
-    <joint name="${prefix}Bucket_Cylinder_2_Joint" type="prismatic">
+    <joint name="${prefix}BucketCylinder2_Joint" type="prismatic">
       <origin xyz="0.0 0.0 -3.1066" rpy="0 0 0" />
-      <parent link="${prefix}Bucket_Cylinder_1" />
-      <child link="${prefix}Bucket_Cylinder_2" />
+      <parent link="${prefix}BucketCylinder1" />
+      <child link="${prefix}BucketCylinder2" />
       <axis xyz="0 0 1" />
       <limit lower="-0.41" upper="0.57" effort="1000.0" velocity="1000.0" />
     </joint>
-    <link name="${prefix}Bucket_Cylinder_2">
+    <link name="${prefix}BucketCylinder2">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Bucket_Cylinder_2.dae" />
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/BucketCylinder2.dae" />
         </geometry>
       </visual>
     </link>
 
-    <joint name="${prefix}Part_11_Joint" type="continuous">
+    <joint name="${prefix}Part11_Joint" type="continuous">
       <origin xyz="0.599 0.350 -2.289" rpy="0 0 0" />
       <parent link="${prefix}Arm" />
-      <child link="${prefix}Part_11" />
+      <child link="${prefix}Part11" />
       <axis xyz="0 1 0" />
     </joint>
-    <link name="${prefix}Part_11">
+    <link name="${prefix}Part11">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Part_11.dae" />
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Part11.dae" />
         </geometry>
       </visual>
     </link>
@@ -279,16 +279,16 @@
       </visual>
     </link>
 
-    <joint name="${prefix}Part_12_Joint" type="continuous">
+    <joint name="${prefix}Part12_Joint" type="continuous">
       <origin xyz="0.719 0.0 0.036" rpy="0 0 0" />
       <parent link="${prefix}Bucket" />
-      <child link="${prefix}Part_12" />
+      <child link="${prefix}Part12" />
       <axis xyz="0 1 0" />
     </joint>
-    <link name="${prefix}Part_12">
+    <link name="${prefix}Part12">
       <visual>
         <geometry>
-          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Part_12.dae" />
+          <mesh filename="package://construction_vehicles/excavator/description/meshes/visual/Part12.dae" />
         </geometry>
       </visual>
     </link>
