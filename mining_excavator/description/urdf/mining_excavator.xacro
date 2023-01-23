@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mining_excavator">
+  <xacro:macro name="mining_excavator" params="prefix:=''">
+    <link name="${prefix}Base">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/mining_excavator/description/meshes/visual/Base.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}TrackLeft_Joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="${prefix}Base" />
+      <child link="${prefix}TrackLeft" />
+    </joint>
+    <link name="${prefix}TrackLeft">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/mining_excavator/description/meshes/visual/TrackLeft.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}TrackRight_Joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="${prefix}Base" />
+      <child link="${prefix}TrackRight" />
+    </joint>
+    <link name="${prefix}TrackRight">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/mining_excavator/description/meshes/visual/TrackRight.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}WheelLeft_Joint" type="continuous">
+      <origin xyz="0.793869 1.89112 0.812398" rpy="0 0 0" />
+      <parent link="${prefix}Base" />
+      <child link="${prefix}WheelLeft" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}WheelLeft">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/mining_excavator/description/meshes/visual/Wheel.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}WheelRight_Joint" type="continuous">
+      <origin xyz="0.793869 -1.89112 0.812398" rpy="0 0 0" />
+      <parent link="${prefix}Base" />
+      <child link="${prefix}WheelRight" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}WheelRight">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/mining_excavator/description/meshes/visual/Wheel.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}MotorLeft_Joint" type="continuous">
+      <origin xyz="-4.76455 1.89112 0.80984" rpy="0 0 0" />
+      <parent link="${prefix}Base" />
+      <child link="${prefix}MotorLeft" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}MotorLeft">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/mining_excavator/description/meshes/visual/MotorLeft.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}MotorRight_Joint" type="continuous">
+      <origin xyz="-4.76455 -1.89112 0.80984" rpy="0 0 0" />
+      <parent link="${prefix}Base" />
+      <child link="${prefix}MotorRight" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}MotorRight">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/mining_excavator/description/meshes/visual/MotorRight.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}Cabin_Joint" type="revolute">
+      <origin xyz="-1.96792 0 0" rpy="0 0 0" />
+      <parent link="${prefix}Base" />
+      <child link="${prefix}Cabin" />
+      <axis xyz="0 0 1" />
+      <limit effort="1000.0" lower="-${pi}" upper="${pi}" velocity="1000.0" />
+    </joint>
+    <link name="${prefix}Cabin">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/mining_excavator/description/meshes/visual/CabinNoWires.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}Boom_Joint" type="continuous">
+      <origin xyz="0.759 0 3.73919" rpy="0 0 0" />
+      <parent link="${prefix}Cabin" />
+      <child link="${prefix}Boom" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}Boom">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/mining_excavator/description/meshes/visual/BoomNoWires.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}BoomCylinder_Joint" type="continuous">
+      <origin xyz="1.844 0 2.46739" rpy="0 ${39.2304/180.0 * pi} 0" />
+      <parent link="${prefix}Cabin" />
+      <child link="${prefix}BoomCylinder" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}BoomCylinder">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/mining_excavator/description/meshes/visual/BoomCylinderNoWiresLeft.dae" />
+        </geometry>
+      </visual>
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/mining_excavator/description/meshes/visual/BoomCylinderNoWiresRight.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}BoomPiston_Joint" type="prismatic">
+      <origin xyz="0 0 4.855" rpy="0 0 0" />
+      <parent link="${prefix}BoomCylinder" />
+      <child link="${prefix}BoomPiston" />
+      <axis xyz="0 0 1" />
+      <limit effort="1000.0" lower="-1.65" upper="1.10" velocity="1000.0" />
+    </joint>
+    <link name="${prefix}BoomPiston">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/mining_excavator/description/meshes/visual/BoomPistonLeft.dae" />
+        </geometry>
+      </visual>
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/mining_excavator/description/meshes/visual/BoomPistonRight.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}Arm_Joint" type="continuous">
+      <origin xyz="7.343 0 1.768" rpy="0 0 0" />
+      <parent link="${prefix}Boom" />
+      <child link="${prefix}Arm" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}Arm">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/mining_excavator/description/meshes/visual/Arm.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}ArmCylinder_Joint" type="continuous">
+      <origin xyz="3.381 0 3.303" rpy="0 ${1.98098/180.0 * pi} 0" />
+      <parent link="${prefix}Boom" />
+      <child link="${prefix}ArmCylinder" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}ArmCylinder">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/mining_excavator/description/meshes/visual/ArmCylinder.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}ArmPiston_Joint" type="prismatic">
+      <origin xyz="4.855 0 0" rpy="0 0 0" />
+      <parent link="${prefix}ArmCylinder" />
+      <child link="${prefix}ArmPiston" />
+      <axis xyz="1 0 0" />
+      <limit effort="1000.0" lower="-1.65" upper="0.70" velocity="1000.0" />
+    </joint>
+    <link name="${prefix}ArmPiston">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/mining_excavator/description/meshes/visual/ArmPiston.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}Bucket_Joint" type="continuous">
+      <origin xyz="-0.087 0 -3.372" rpy="0 0 0" />
+      <parent link="${prefix}Arm" />
+      <child link="${prefix}Bucket" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}Bucket">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/mining_excavator/description/meshes/visual/Bucket.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}BucketCylinder_Joint" type="continuous">
+      <origin xyz="1.760 0 0.779" rpy="0 ${9.35729/180.0 * pi} 0" />
+      <parent link="${prefix}Arm" />
+      <child link="${prefix}BucketCylinder" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}BucketCylinder">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/mining_excavator/description/meshes/visual/BucketCylinder.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}BucketPiston_Joint" type="prismatic">
+      <origin xyz="0 0 -3.668" rpy="0 0 0" />
+      <parent link="${prefix}BucketCylinder" />
+      <child link="${prefix}BucketPiston" />
+      <axis xyz="0 0 -1" />
+      <limit effort="1000.0" lower="-0.90" upper="1.10" velocity="1000.0" />
+    </joint>
+    <link name="${prefix}BucketPiston">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/mining_excavator/description/meshes/visual/BucketPiston.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}BucketPart1_Joint" type="continuous">
+      <origin xyz="0.010 0 -2.721" rpy="0 0 0" />
+      <parent link="${prefix}Arm" />
+      <child link="${prefix}BucketPart1" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}BucketPart1">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/mining_excavator/description/meshes/visual/BucketPart1.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="${prefix}BucketPart2_Joint" type="continuous">
+      <origin xyz="0.800 0 -0.285" rpy="0 0 0" />
+      <parent link="${prefix}Bucket" />
+      <child link="${prefix}BucketPart2" />
+      <axis xyz="0 1 0" />
+    </joint>
+    <link name="${prefix}BucketPart2">
+      <visual>
+        <geometry>
+          <mesh filename="package://construction_vehicles/mining_excavator/description/meshes/visual/BucketPart2.dae" />
+        </geometry>
+      </visual>
+    </link>
+
+  </xacro:macro>
+</robot>

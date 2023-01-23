@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="mining_excavator">
+
+  <xacro:include filename="$(find construction_vehicles)/mining_excavator/description/urdf/mining_excavator.xacro" />
+
+  <xacro:mining_excavator prefix="Cat_6015B_" />
+
+</robot>

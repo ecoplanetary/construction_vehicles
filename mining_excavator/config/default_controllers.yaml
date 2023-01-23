@@ -1,0 +1,47 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 60
+
+joint_group_position_controller:
+  type: position_controllers/JointGroupPositionController
+  joints: 
+    - Cat_6015B_Boom_Joint
+    - Cat_6015B_BoomCylinder_Joint
+    - Cat_6015B_Arm_Joint
+    - Cat_6015B_ArmCylinder_Joint
+    - Cat_6015B_Bucket_Joint
+    - Cat_6015B_BucketCylinder_Joint
+    - Cat_6015B_BucketPart1_Joint
+    - Cat_6015B_BucketPart2_Joint
+
+Cat_6015B_Cabin_Joint_pos_controller:
+  type: position_controllers/JointPositionController
+  joint: Cat_6015B_Cabin_Joint
+
+Cat_6015B_BoomPiston_Joint_pos_controller:
+  type: position_controllers/JointPositionController
+  joint: Cat_6015B_BoomPiston_Joint
+
+Cat_6015B_ArmPiston_Joint_pos_controller:
+  type: position_controllers/JointPositionController
+  joint: Cat_6015B_ArmPiston_Joint
+
+Cat_6015B_BucketPiston_Joint_pos_controller:
+  type: position_controllers/JointPositionController
+  joint: Cat_6015B_BucketPiston_Joint
+
+Cat_6015B_Cabin_Joint_vel_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: Cat_6015B_Cabin_Joint
+
+Cat_6015B_BoomPiston_Joint_vel_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: Cat_6015B_BoomPiston_Joint
+
+Cat_6015B_ArmPiston_Joint_vel_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: Cat_6015B_ArmPiston_Joint
+
+Cat_6015B_BucketPiston_Joint_vel_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: Cat_6015B_BucketPiston_Joint

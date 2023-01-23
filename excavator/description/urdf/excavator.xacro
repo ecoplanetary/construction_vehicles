@@ -162,7 +162,7 @@
       <parent link="${prefix}BoomCylinder1" />
       <child link="${prefix}BoomCylinder2" />
       <axis xyz="0 0 1" />
-      <limit lower="-1.70" upper="0.31" effort="1000.0" velocity="1000.0" />
+      <limit lower="-1.20" upper="1.10" effort="1000.0" velocity="1000.0" />
     </joint>
     <link name="${prefix}BoomCylinder2">
       <visual>
@@ -198,7 +198,7 @@
       <parent link="${prefix}ArmCylinder1" />
       <child link="${prefix}ArmCylinder2" />
       <axis xyz="0 0 1" />
-      <limit lower="-1.6" upper="0.38" effort="1000.0" velocity="1000.0" />
+      <limit lower="-1.60" upper="0.80" effort="1000.0" velocity="1000.0" />
     </joint>
     <link name="${prefix}ArmCylinder2">
       <visual>
@@ -241,7 +241,7 @@
       <parent link="${prefix}BucketCylinder1" />
       <child link="${prefix}BucketCylinder2" />
       <axis xyz="0 0 1" />
-      <limit lower="-0.41" upper="0.57" effort="1000.0" velocity="1000.0" />
+      <limit lower="-0.60" upper="0.20" effort="1000.0" velocity="1000.0" />
     </joint>
     <link name="${prefix}BucketCylinder2">
       <visual>
